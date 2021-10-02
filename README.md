@@ -6,7 +6,7 @@
 
 **Git Pages**
 
-https://tgmotw.github.io/russian-travel/
+https://tgmotw.github.io/mesto-project/
 
 **Описание**
 
