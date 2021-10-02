@@ -1,0 +1,17 @@
+/*Настройки для pixel-perfect*/
+.p-p{
+    display: block;
+    width: 1280px;
+    position: absolute;
+    object-fit: contain;
+    opacity: 0.6;
+    background: #000;
+    z-index: 2000;
+}
+
+@media screen and (max-width: 320px){
+    .p-p {
+        width: 320px;
+        margin-top: 0;
+    }
+}

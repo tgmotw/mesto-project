@@ -1,0 +1,45 @@
+.profile__add-user-button{
+/*Сброс стандартных настроек*/
+    text-rendering: unset;
+    color: unset;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-indent: 0;
+    text-shadow: none;
+    display: inline-block;
+    text-align: center;
+    align-items: unset;
+    cursor: default;
+    background-color: unset;
+    box-sizing: border-box;
+    font: unset;
+    padding: 0;
+    border-width: 0;
+    border-style: unset;
+    border-color: unset;
+    border-image: unset;
+    /*Кастомные настройки*/
+    width: 150px;
+    height: 50px;
+    background-image: url("images/profile__add-button.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.profile__add-user-button:hover{
+    opacity: .6;
+}
+
+@media screen and (max-width: 650px){
+    .profile__add-user-button{
+        width: 282px;
+        margin-top: 36px;
+    }
+}
+
+@media screen and (max-width: 320px){
+    .profile__add-user-button{
+        margin-top: 32px;
+    }
+}

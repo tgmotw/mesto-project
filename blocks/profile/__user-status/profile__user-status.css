@@ -1,0 +1,29 @@
+.profile__user-status{
+    margin-block-start: 0;
+    margin-block-end: 0;
+    font-size: 18px;
+    line-height: 1.22;
+    color: #fff;
+    text-align: left;
+}
+
+@media screen and (max-width: 1280px){
+    .profile__user-status{
+        font-size: calc(1.40625vw + 0.00989583 * (1280px - 100vw));
+    }
+}
+
+@media screen and (max-width: 410px){
+    .profile__user-status{
+        margin-top: 10px;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 320px){
+    .profile__user-status{
+        font-size: 14px;
+        line-height: 1.22;
+        margin-top: 8px;
+    }
+}

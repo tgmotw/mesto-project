@@ -1,0 +1,8 @@
+.cards__card-description{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing:border-box;
+    margin-top: 25px;
+    padding: 0 21px;
+}

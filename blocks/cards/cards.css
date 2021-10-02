@@ -1,0 +1,20 @@
+.cards{
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    box-sizing: border-box;
+    width: 100%;
+    margin-top: 47px;
+}
+
+@media screen and (max-width: 880px){
+    .cards{
+        padding: 0 calc(0.02159091 * (880px - 100vw));
+    }
+}
+
+@media screen and (max-width: 320px){
+    .cards{
+        margin-top: 36px;
+    }
+}

@@ -1,0 +1,25 @@
+.profile__user-name{
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-right: 18px;
+    font-size: 42px;
+    font-style: normal;
+    line-height: 1.14;
+    color: #fff;
+    text-align: center;
+}
+
+@media screen and (max-width: 1280px){
+    .profile__user-name{
+        font-size: calc(4.085603vw + 0.01450632 * (1280px - 100vw));
+        margin-right: calc(1.40625vw + 0.00572917 * (1280px - 100vw));
+    }
+}
+
+@media screen and (max-width: 410px){
+    .profile__user-name{
+        font-size: 27px;
+        line-height: 1.22;
+        margin-right: 10px;
+    }
+}

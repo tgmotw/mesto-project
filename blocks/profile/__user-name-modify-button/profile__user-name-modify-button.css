@@ -1,0 +1,39 @@
+.profile__user-name-modify-button{
+/*Сброс стандартных настроек*/
+    text-rendering: unset;
+    color: unset;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-indent: 0;
+    text-shadow: none;
+    display: inline-block;
+    text-align: center;
+    align-items: unset;
+    cursor: default;
+    background-color: unset;
+    box-sizing: border-box;
+    font: unset;
+    padding: 0;
+    border-width: 0;
+    border-style: unset;
+    border-color: unset;
+    border-image: unset;
+/*Кастомные настройки*/
+    width: 24px;
+    height: 24px;
+    background-image: url("images/profile__edit-button.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.profile__user-name-modify-button:hover{
+    opacity: .6;
+}
+
+@media screen and (max-width: 320px){
+    .profile__user-name-modify-button{
+        width: 18px;
+        height: 18px;
+    }
+}

@@ -1,0 +1,17 @@
+/*Сбрасываем стандартные настройки элемента списка*/
+.cards__list-item::marker{
+    unicode-bidi: isolate;
+    font-variant-numeric: normal;
+    white-space: normal;
+    text-transform: none;
+}
+/*Настраиваем блок*/
+.cards__list-item{
+    display: block;
+    box-sizing: border-box;
+    width: 282px;
+    height: 362px;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #fff;
+}
