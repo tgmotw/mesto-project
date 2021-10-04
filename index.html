@@ -20,94 +20,97 @@
   
   <main class="content">
     <section class="profile">
-      <figure class="profile__current-user">
+      <div class="profile__current-user">
         <img src="./blocks/profile/__user-avatar/profile__user-avatar.jpg"
              alt="Портретное фото Жак-Ив Кусто"
              class="profile__user-avatar">
-        <figcaption class="profile__user-description">
+        <div  class="profile__user-description">
           <div class="profile__user-name-container">
             <h1 class="profile__user-name">Жак&#8209;Ив&nbsp;Кусто</h1>
             <button class="profile__user-name-modify-button"></button>
           </div>
           <p class="profile__user-status">Исследователь океана</p>
-        </figcaption>
-      </figure>
+        </div>
+      </div>
       <button class="profile__add-user-button"></button>
     </section>
     
     <section class="cards">
       <ul class="cards__list">
         <li class="cards__list-item">
-          <figure class="cards__card">
+          <article class="cards__card">
             <img src="blocks/cards/__card-image/images/cards__karachaevsk.jpg"
                  alt="Карачаевск.Храм на холме"
                  class="cards__card-image">
-            <figcaption class="cards__card-description">
+            <div class="cards__card-description">
               <p class="cards__card-name">Карачаевск</p>
               <button class="cards__card-like-button cards__card-like-button_color_black">
               </button>
-            </figcaption>
-          </figure>
+            </div>
+          </article>
         </li>
         <li class="cards__list-item">
-          <figure class="cards__card">
+          <article class="cards__card">
             <img src="blocks/cards/__card-image/images/cards__elbrus.jpg"
                  alt="Эльбрус"
                  class="cards__card-image">
-            <figcaption class="cards__card-description">
+            <div class="cards__card-description">
               <p class="cards__card-name">Гора Эльбрус</p>
               <button class="cards__card-like-button">
               </button>
-            </figcaption>
-          </figure>
+            </div>
+          </article>
         </li>
         <li class="cards__list-item">
-          <figure class="cards__card">
+          <article class="cards__card">
             <img src="blocks/cards/__card-image/images/cards__donbai.jpg"
                  alt="Донбай"
                  class="cards__card-image">
-            <figcaption class="cards__card-description">
+            <div class="cards__card-description">
               <p class="cards__card-name">Домбай</p>
-              <button class="cards__card-like-button">
+              <button class="cards__card-like-button"
+                      type="button">
               </button>
-            </figcaption>
-          </figure>
+            </div>
+          </article>
         </li>
         <li class="cards__list-item">
-          <figure class="cards__card">
+          <article class="cards__card">
             <img src="blocks/cards/__card-image/images/cards__elbrus.jpg"
                  alt="Донбай"
                  class="cards__card-image">
-            <figcaption class="cards__card-description">
+            <div class="cards__card-description">
               <p class="cards__card-name">Гора Эльбрус</p>
-              <button class="cards__card-like-button">
+              <button class="cards__card-like-button"
+                      type="button">
               </button>
-            </figcaption>
-          </figure>
+            </div>
+          </article>
         </li>
         <li class="cards__list-item">
-          <figure class="cards__card">
+          <article class="cards__card">
             <img src="blocks/cards/__card-image/images/cards__donbai.jpg"
                  alt="Донбай"
                  class="cards__card-image">
-            <figcaption class="cards__card-description">
+            <div class="cards__card-description">
               <p class="cards__card-name">Домбай</p>
-              <button class="cards__card-like-button cards__card-like-button_color_black">
+              <button class="cards__card-like-button cards__card-like-button_color_black"
+                      type="button">
               </button>
-            </figcaption>
-          </figure>
+            </div>
+          </article>
         </li>
         <li class="cards__list-item">
-          <figure class="cards__card">
+          <article class="cards__card">
             <img src="blocks/cards/__card-image/images/cards__karachaevsk.jpg"
                  alt="Карачаево-Черкессия"
                  class="cards__card-image">
-            <figcaption class="cards__card-description">
+            <div class="cards__card-description">
               <p class="cards__card-name">Карачаево-Черкессия</p>
               <button class="cards__card-like-button">
               </button>
-            </figcaption>
-          </figure>
+            </div>
+          </article>
         </li>
       </ul>
     </section>
@@ -120,8 +123,8 @@
 <!--Popups------------------------------------------------------------------>
   <div class="profile-edit-popup profile-edit-popup_popup_opened">
     <div class="profile-edit-popup__container">
-      <button class="profile-edit-popup__close-button profile-edit-popup_popup_opened"></button>
-      <form action="" class="profile-edit-popup__edit-form">
+      <button class="profile-edit-popup__close-button"></button>
+      <form class="profile-edit-popup__edit-form">
         <h2 class="profile-edit-popup__edit-form-header">
           Редактировать&nbsp;профиль
         </h2>
@@ -135,7 +138,8 @@
                  placeholder="Исследователь океана"
                  class="profile-edit-popup__edit-form-status-input">
         </fieldset>
-        <button class="profile-edit-popup__edit-form-submit-button">
+        <button class="profile-edit-popup__edit-form-submit-button"
+                type="submit">
           Сохранить
         </button>
       </form>

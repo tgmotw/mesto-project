@@ -6,7 +6,12 @@
     font-style: normal;
     line-height: 1.14;
     color: #fff;
-    text-align: center;
+    text-align: left;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 294px;
+    font-weight: 500;
 }
 
 @media screen and (max-width: 1280px){

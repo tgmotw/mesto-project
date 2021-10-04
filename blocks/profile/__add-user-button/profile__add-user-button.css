@@ -22,7 +22,7 @@
     width: 150px;
     height: 50px;
     background-image: url("images/profile__add-button.svg");
-    background-size: cover;
+    background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
 }
@@ -35,6 +35,7 @@
     .profile__add-user-button{
         width: 282px;
         margin-top: 36px;
+        background-image: url("images/profile__add-button-mobile.svg");
     }
 }
 
