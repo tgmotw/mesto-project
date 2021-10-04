@@ -14,10 +14,10 @@
     font-weight: 500;
 }
 
-@media screen and (max-width: 1280px){
+@media screen and (max-width: 880px){
     .profile__user-name{
-        font-size: calc(4.085603vw + 0.01450632 * (1280px - 100vw));
-        margin-right: calc(1.40625vw + 0.00572917 * (1280px - 100vw));
+        font-size: calc(4.772727vw + 0.01581238 * (880px - 100vw));
+        margin-right: calc(2.045455vw + 0.00343327 * (880px - 100vw));
     }
 }
 
