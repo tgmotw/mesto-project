@@ -6,8 +6,6 @@
     flex-direction: column;
     align-items: start;
     width: 470px;
-    height: 370px;
-    margin-top: 110px;
 }
 
 @media screen and (max-width: 880px) {
@@ -21,11 +19,5 @@
         left: 0;
         width: 282px;
         height: 322px;
-    }
-}
-
-@media screen and (max-width: 320px) {
-    .profile-edit-popup__container {
-        margin-top: 80px;
     }
 }
