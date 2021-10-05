@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru" xmlns="http://www.w3.org/1999/xhtml">
+<html class="whole-page" lang="ru" xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,7 +17,8 @@
   <header class="header">
     <div class="header__logo"></div>
   </header>
-  
+<!--Main------------------------------------------------------------------>
+<!--Секция с данными пользователя-->
   <main class="content">
     <section class="profile">
       <div class="profile__current-user">
@@ -28,15 +29,17 @@
           <div class="profile__user-name-container">
             <h1 class="profile__user-name">Жак&#8209;Ив&nbsp;Кусто</h1>
             <button class="profile__user-name-modify-button"
-                    type="button"></button>
+                    type="button"
+                    aria-label="Кнопка редактирования профиля пользователя"></button>
           </div>
           <p class="profile__user-status">Исследователь океана</p>
         </div>
       </div>
       <button class="profile__add-user-button"
-              type="button"></button>
+              type="button"
+              aria-label="Кнопка добавления нового пользователя"></button>
     </section>
-    
+<!--Секция c фотографиями-------->
     <section class="cards">
       <ul class="cards__list">
         <li class="cards__list-item">
@@ -47,7 +50,8 @@
             <div class="cards__card-description">
               <p class="cards__card-name">Карачаевск</p>
               <button class="cards__card-like-button cards__card-like-button_color_black"
-                      type="button">
+                      type="button"
+                      aria-label="Кнопка отмечает картинку как любимую">
               </button>
             </div>
           </article>
@@ -60,7 +64,8 @@
             <div class="cards__card-description">
               <p class="cards__card-name">Гора Эльбрус</p>
               <button class="cards__card-like-button"
-                      type="button">
+                      type="button"
+                      aria-label="Кнопка отмечает картинку как любимую">
               </button>
             </div>
           </article>
@@ -73,7 +78,8 @@
             <div class="cards__card-description">
               <p class="cards__card-name">Домбай</p>
               <button class="cards__card-like-button"
-                      type="button">
+                      type="button"
+                      aria-label="Кнопка отмечает картинку как любимую">
               </button>
             </div>
           </article>
@@ -86,7 +92,8 @@
             <div class="cards__card-description">
               <p class="cards__card-name">Гора Эльбрус</p>
               <button class="cards__card-like-button"
-                      type="button">
+                      type="button"
+                      aria-label="Кнопка отмечает картинку как любимую">
               </button>
             </div>
           </article>
@@ -99,7 +106,8 @@
             <div class="cards__card-description">
               <p class="cards__card-name">Домбай</p>
               <button class="cards__card-like-button cards__card-like-button_color_black"
-                      type="button">
+                      type="button"
+                      aria-label="Кнопка отмечает картинку как любимую">
               </button>
             </div>
           </article>
@@ -112,7 +120,8 @@
             <div class="cards__card-description">
               <p class="cards__card-name">Карачаево-Черкессия</p>
               <button class="cards__card-like-button"
-                      type="button">
+                      type="button"
+                      aria-label="Кнопка отмечает картинку как любимую">
               </button>
             </div>
           </article>
@@ -120,6 +129,7 @@
       </ul>
     </section>
   </main>
+<!--Footer------------------------------------------------------------------>
   <footer class="footer">
     <p class="footer__copyright footer_margin_on">
       &#169; 2021. Дятлов Юрий
@@ -128,7 +138,8 @@
 <!--Popups------------------------------------------------------------------>
   <div class="profile-edit-popup profile-edit-popup_popup_opened">
     <div class="profile-edit-popup__container">
-      <button class="profile-edit-popup__close-button"></button>
+      <button class="profile-edit-popup__close-button"
+              aria-label="Кнопка закрывает окно редактирования профиля"></button>
       <form class="profile-edit-popup__edit-form"
             name="profile-edit-popup__edit-form">
         <h2 class="profile-edit-popup__edit-form-header">
@@ -138,13 +149,17 @@
           <input type="text"
                  placeholder="Имя пользователя"
                  class="profile-edit-popup__edit-form-name-input"
-                 value="Жак-Ив Кусто">
+                 value="Жак-Ив Кусто"
+                 name="profile-edit-popup__edit-form-name-input"
+                 required>
         </fieldset>
         <fieldset class="profile-edit-popup__edit-form-status-input-area">
           <input type="text"
                  placeholder="Профессия"
                  class="profile-edit-popup__edit-form-status-input"
-                 value="Исследователь океана">
+                 value="Исследователь океана"
+                 name="profile-edit-popup__edit-form-status-input"
+                 required>
         </fieldset>
         <button class="profile-edit-popup__edit-form-submit-button"
                 type="submit">

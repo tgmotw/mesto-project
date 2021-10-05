@@ -9,7 +9,6 @@
     display: inline-block;
     text-align: center;
     align-items: unset;
-    cursor: default;
     background-color: unset;
     box-sizing: border-box;
     font: unset;
@@ -25,6 +24,7 @@
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+    cursor: pointer;
 }
 
 .profile__user-name-modify-button:hover{

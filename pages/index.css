@@ -1,11 +1,9 @@
-/*----------------------------------------------------------------------------*/
-/*Сбрасываем стили*/
+/*Сбрасываем глобальные стили*/
 @import url(../vendor/normalize.css);
-/*----------------------------------------------------------------------------*/
 /*Импортируем шрифты*/
 @import url(../vendor/fonts/fonts.css);
-/*----------------------------------------------------------------------------*/
 /*Импортируем настройки переиспользуемых элементов и глобальных блоков*/
+@import url(../blocks/whole-page/whole-page.css);
 @import url(../blocks/page/page.css);
 @import url(../blocks/content/content.css);
 @import url(../blocks/profile-edit-popup/profile-edit-popup.css);
@@ -19,9 +17,7 @@
 @import url(../blocks/profile-edit-popup/__edit-form-submit-button/profile-edit-popup__edit-form-submit-button.css);
 @import url(../blocks/profile-edit-popup/__edit-form-name-input/profile-edit-popup__edit-form-name-input.css);
 @import url(../blocks/profile-edit-popup/__edit-form-status-input/profile-edit-popup__edit-form-status-input.css);
-/*----------------------------------------------------------------------------*/
 /*Импортируем настройки блоков и элементов*/
-/*----------------------------------------------------------------------------*/
 @import url(../blocks/header/header.css);
 @import url(../blocks/header/__logo/header__logo.css);
 /*Profile*/
@@ -48,10 +44,9 @@
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/footer/__copyright/footer__copyright.css);
 
-
-/*Настройки для pixel-perfect*/
+/*Настройки для pixel-perfect
 @import url("../p-p.css");
-/*
+
 header{
     background-color: red;
 }
@@ -68,7 +63,7 @@ section{
     background-color: chartreuse;
 }
 
-html{
+whole-page{
     background-color: dimgray;
 }
 */

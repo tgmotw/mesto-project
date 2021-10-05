@@ -7,7 +7,6 @@
     text-shadow: none;
     text-align: center;
     align-items: unset;
-    cursor: default;
     font: unset;
     padding: 0;
     border-width: 0;
@@ -23,6 +22,7 @@
     font-size: 18px;
     line-height: 1.22;
     color: #fff;
+    cursor: pointer;
 }
 .profile-edit-popup__edit-form-submit-button:hover{
     opacity: .6;

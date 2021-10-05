@@ -4,17 +4,21 @@
     min-width: 320px;
     max-width: 880px;
     margin-top: 67px;
+    padding-bottom: 60px;
+    flex: 0 0 auto;
 }
 
-@media screen and (max-width: 1280px){
+@media screen and (max-width: 880px){
     .footer{
-        margin-top: calc(5.234375vw + 0.03255208 * (1280px - 100vw));
+        margin-top: calc(7.613636vw + 0.04220779 * (880px - 100vw));
     }
 }
 
+
+
 @media screen and (max-width: 320px) {
     .footer{
-        padding: 0 19px;
+        padding: 0 19px 37px 19px;
         margin-top: 48px;
     }
 }
