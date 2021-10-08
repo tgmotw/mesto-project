@@ -1,4 +1,4 @@
-.profile-edit-popup__edit-form-name-input-area {
+.popup__edit-form-inputs-area {
 /*Сбрасываем стандартные настройки*/
     margin-inline: 0;
     padding-block: 0;
@@ -10,13 +10,11 @@
     display: block;
     box-sizing: border-box;
     width: 100%;
-    margin-top: 48px;
-    padding-bottom: 11px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    margin-top: 31px;
 }
 
 @media screen and (max-width: 530px){
-    .profile-edit-popup__edit-form-name-input-area{
+    .popup__edit-form-input-area{
         margin-top: 73px;
         padding-bottom: 8px;
     }

@@ -1,4 +1,4 @@
-.profile-edit-popup{
+.popup{
     position: fixed;
     display: none;
     justify-content: center;
@@ -10,7 +10,7 @@
     top: 0;
 }
 
-.profile-edit-popup:before {
+.popup:before {
     background: #000;
     content: "";
     position: absolute;

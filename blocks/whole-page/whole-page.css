@@ -1,4 +1,5 @@
 .whole-page{
 /*Данная настройка необходима для создание липкого футтера*/
-    height: 100vh;
+    height: 100%;
+    box-sizing: border-box;
 }

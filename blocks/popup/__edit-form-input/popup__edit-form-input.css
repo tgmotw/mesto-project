@@ -1,4 +1,4 @@
-.profile-edit-popup__edit-form-status-input{
+.popup__edit-form-input{
     /*Сбрасываем стандартные настройки элемента*/
     border-width: 0;
     border-style: unset;
@@ -8,11 +8,13 @@
     border-image-width: initial;
     border-image-outset: initial;
     border-image-repeat: initial;
-    padding: 0;
     /*Настраиваем элемент*/
     display: block;
     width: 100%;
     font-size: 14px;
     line-height: 1.21;
     color: #000;
+    margin-top: 28px;
+    padding: 0 0 11px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, .2);
 }

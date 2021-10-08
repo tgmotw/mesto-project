@@ -1,4 +1,4 @@
-.profile-edit-popup__edit-form{
+.popup__edit-form{
     display: flex;
     flex-direction: column;
     align-items: start;
@@ -12,7 +12,7 @@
 }
 
 @media screen and (max-width: 530px) {
-    .profile-edit-popup__edit-form{
+    .popup__edit-form{
         padding: 27px 22px 25px 22px;
     }
 }

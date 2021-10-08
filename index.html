@@ -48,8 +48,8 @@
                  alt="Карачаевск.Храм на холме"
                  class="cards__card-image">
             <div class="cards__card-description">
-              <p class="cards__card-name">Карачаевск</p>
-              <button class="cards__card-like-button cards__card-like-button_color_black"
+              <h2 class="cards__card-name">Карачаевск</h2>
+              <button class="cards__card-like-button cards__card-like-button_active"
                       type="button"
                       aria-label="Кнопка отмечает картинку как любимую">
               </button>
@@ -62,7 +62,7 @@
                  alt="Эльбрус"
                  class="cards__card-image">
             <div class="cards__card-description">
-              <p class="cards__card-name">Гора Эльбрус</p>
+              <h2 class="cards__card-name">Гора Эльбрус</h2>
               <button class="cards__card-like-button"
                       type="button"
                       aria-label="Кнопка отмечает картинку как любимую">
@@ -76,7 +76,7 @@
                  alt="Донбай"
                  class="cards__card-image">
             <div class="cards__card-description">
-              <p class="cards__card-name">Домбай</p>
+              <h2 class="cards__card-name">Домбай</h2>
               <button class="cards__card-like-button"
                       type="button"
                       aria-label="Кнопка отмечает картинку как любимую">
@@ -90,7 +90,7 @@
                  alt="Донбай"
                  class="cards__card-image">
             <div class="cards__card-description">
-              <p class="cards__card-name">Гора Эльбрус</p>
+              <h2 class="cards__card-name">Гора Эльбрус</h2>
               <button class="cards__card-like-button"
                       type="button"
                       aria-label="Кнопка отмечает картинку как любимую">
@@ -104,8 +104,8 @@
                  alt="Донбай"
                  class="cards__card-image">
             <div class="cards__card-description">
-              <p class="cards__card-name">Домбай</p>
-              <button class="cards__card-like-button cards__card-like-button_color_black"
+              <h2 class="cards__card-name">Домбай</h2>
+              <button class="cards__card-like-button cards__card-like-button_active"
                       type="button"
                       aria-label="Кнопка отмечает картинку как любимую">
               </button>
@@ -118,7 +118,7 @@
                  alt="Карачаево-Черкессия"
                  class="cards__card-image">
             <div class="cards__card-description">
-              <p class="cards__card-name">Карачаево-Черкессия</p>
+              <h2 class="cards__card-name">Карачаево-Черкессия</h2>
               <button class="cards__card-like-button"
                       type="button"
                       aria-label="Кнопка отмечает картинку как любимую">
@@ -131,37 +131,36 @@
   </main>
 <!--Footer------------------------------------------------------------------>
   <footer class="footer">
-    <p class="footer__copyright footer_margin_on">
+    <p class="footer__copyright">
       &#169; 2021. Дятлов Юрий
     </p>
   </footer>
 <!--Popups------------------------------------------------------------------>
-  <div class="profile-edit-popup profile-edit-popup_popup_opened">
-    <div class="profile-edit-popup__container">
-      <button class="profile-edit-popup__close-button"
+  <div class="popup popup_opened">
+    <div class="popup__container">
+      <button class="popup__close-button"
+              type="button"
               aria-label="Кнопка закрывает окно редактирования профиля"></button>
-      <form class="profile-edit-popup__edit-form"
-            name="profile-edit-popup__edit-form">
-        <h2 class="profile-edit-popup__edit-form-header">
+      <form class="popup__edit-form"
+            name="popup__edit-form">
+        <h2 class="popup__edit-form-header">
           Редактировать&nbsp;профиль
         </h2>
-        <fieldset class="profile-edit-popup__edit-form-name-input-area">
+        <fieldset class="popup__edit-form-inputs-area">
           <input type="text"
                  placeholder="Имя пользователя"
-                 class="profile-edit-popup__edit-form-name-input"
+                 class="popup__edit-form-input popup__edit-form-input_name"
                  value="Жак-Ив Кусто"
-                 name="profile-edit-popup__edit-form-name-input"
+                 name="popup__edit-form-name-input"
                  required>
-        </fieldset>
-        <fieldset class="profile-edit-popup__edit-form-status-input-area">
           <input type="text"
                  placeholder="Профессия"
-                 class="profile-edit-popup__edit-form-status-input"
+                 class="popup__edit-form-input popup__edit-form-input_status"
                  value="Исследователь океана"
-                 name="profile-edit-popup__edit-form-status-input"
+                 name="popup__edit-form-status-input"
                  required>
         </fieldset>
-        <button class="profile-edit-popup__edit-form-submit-button"
+        <button class="popup__edit-form-submit-button"
                 type="submit">
           Сохранить
         </button>

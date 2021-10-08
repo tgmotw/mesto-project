@@ -1,4 +1,4 @@
-.profile-edit-popup__edit-form-submit-button{
+.popup__edit-form-submit-button{
 /*Сброс стандартных настроек*/
     text-rendering: unset;
     letter-spacing: normal;
@@ -24,19 +24,19 @@
     color: #fff;
     cursor: pointer;
 }
-.profile-edit-popup__edit-form-submit-button:hover{
-    opacity: .6;
+.popup__edit-form-submit-button:hover{
+    opacity: .8;
 }
 
 @media screen and (max-width: 530px){
-    .profile-edit-popup__edit-form-submit-button{
+    .popup__edit-form-submit-button{
         font-size: 14px;
         line-height: 1.21;
     }
 }
 
 @media screen and (max-width: 510px){
-    .profile-edit-popup__edit-form-submit-button{
+    .popup__edit-form-submit-button{
         height: 47px;
         margin-top: 46px;
     }

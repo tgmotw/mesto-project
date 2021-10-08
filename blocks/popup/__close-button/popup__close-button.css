@@ -1,4 +1,4 @@
-.profile-edit-popup__close-button{
+.popup__close-button{
     /*Сброс стандартных настроек*/
     text-rendering: unset;
     color: unset;
@@ -30,18 +30,18 @@
     cursor: pointer;
 }
 
-.profile-edit-popup__close-button:hover{
+.popup__close-button:hover{
     opacity: .6;
 }
 
 @media screen and (max-width: 880px){
-    .profile-edit-popup__close-button{
+    .popup__close-button{
         width: calc(3.636364vw + 0.01267218 * (880px - 100vw));
     }
 }
 
 @media screen and (max-width: 320px) {
-    .profile-edit-popup__close-button{
+    .popup__close-button{
 
         width: 20px;
         height: 20px;
