@@ -1,5 +1,8 @@
 .whole-page{
 /*Данная настройка необходима для создание липкого футтера*/
-    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     box-sizing: border-box;
+    min-height: 100%;
 }

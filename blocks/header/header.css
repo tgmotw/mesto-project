@@ -3,13 +3,13 @@
     box-sizing: border-box;
     border-bottom: 1px solid rgba(84, 84, 84, .7);
     margin-top: 45px;
+    padding-bottom: 41px;
     flex: 0 0 auto;
 }
 
 @media screen and (min-width: 1280px) {
     .header{
         width: 880px;
-        padding-bottom: 41px;
     }
 }
 
@@ -22,7 +22,7 @@
 
 @media screen and (max-width: 880px) {
     .header{
-        padding-bottom: calc(4.659091 + 0.03051948 * (880px - 100vw));
+        padding-bottom: calc(4.659091vw + 0.03051948 * (880px - 100vw));
     }
 }
 
