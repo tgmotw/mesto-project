@@ -1,0 +1,36 @@
+.cards__card-delete-button{
+    /*Сброс стандартных настроек*/
+    text-rendering: unset;
+    color: unset;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-indent: 0;
+    text-shadow: none;
+    display: inline-block;
+    text-align: center;
+    align-items: unset;
+    background-color: unset;
+    box-sizing: border-box;
+    font: unset;
+    padding: 0;
+    border-width: 0;
+    border-style: unset;
+    border-color: unset;
+    border-image: unset;
+    /*Кастомные настройки*/
+    position: absolute;
+    top: 20px;
+    left: 244px;
+    width:18px;
+    height:19px;
+    background-image: url("images/cards__card-delete-button.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+
+.cards__card-delete-button:hover{
+    background-image: url("images/cards__card-delete-button_hover.svg");
+    opacity: .6;
+}

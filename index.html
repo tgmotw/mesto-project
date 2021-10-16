@@ -54,6 +54,10 @@
                       aria-label="Кнопка отмечает картинку как любимую">
               </button>
             </div>
+            <button class="cards__card-delete-button"
+                    type="button"
+                    aria-label="Кнопка удаляет картинку">
+            </button>
           </article>
         </li>
         <li class="cards__list-item">
@@ -68,6 +72,10 @@
                       aria-label="Кнопка отмечает картинку как любимую">
               </button>
             </div>
+            <button class="cards__card-delete-button"
+                    type="button"
+                    aria-label="Кнопка удаляет картинку">
+            </button>
           </article>
         </li>
         <li class="cards__list-item">
@@ -82,6 +90,10 @@
                       aria-label="Кнопка отмечает картинку как любимую">
               </button>
             </div>
+            <button class="cards__card-delete-button"
+                    type="button"
+                    aria-label="Кнопка удаляет картинку">
+            </button>
           </article>
         </li>
         <li class="cards__list-item">
@@ -96,6 +108,10 @@
                       aria-label="Кнопка отмечает картинку как любимую">
               </button>
             </div>
+            <button class="cards__card-delete-button"
+                    type="button"
+                    aria-label="Кнопка удаляет картинку">
+            </button>
           </article>
         </li>
         <li class="cards__list-item">
@@ -110,6 +126,10 @@
                       aria-label="Кнопка отмечает картинку как любимую">
               </button>
             </div>
+            <button class="cards__card-delete-button"
+                    type="button"
+                    aria-label="Кнопка удаляет картинку">
+            </button>
           </article>
         </li>
         <li class="cards__list-item">
@@ -124,6 +144,10 @@
                       aria-label="Кнопка отмечает картинку как любимую">
               </button>
             </div>
+            <button class="cards__card-delete-button"
+                    type="button"
+                    aria-label="Кнопка удаляет картинку">
+            </button>
           </article>
         </li>
       </ul>
@@ -136,33 +160,64 @@
     </p>
   </footer>
 <!--Popups------------------------------------------------------------------>
-  <div class="popup popup_opened">
+<!--Окно редактирования пользователя-->
+  <div class="popup"> <!--popup_opened"-->
     <div class="popup__container">
       <button class="popup__close-button"
               type="button"
-              aria-label="Кнопка закрывает окно редактирования профиля"></button>
-      <form class="popup__edit-form"
-            name="popup__edit-form">
-        <h2 class="popup__edit-form-header">
+              aria-label="Кнопка закрывает окно"></button>
+      <form class="popup__form"
+            name="popup__user-edit-form">
+        <h2 class="popup__form-header">
           Редактировать&nbsp;профиль
         </h2>
-        <fieldset class="popup__edit-form-inputs-area">
+        <fieldset class="popup__form-inputs-area">
           <input type="text"
                  placeholder="Имя пользователя"
-                 class="popup__edit-form-input popup__edit-form-input_user_name"
+                 class="popup__form-input popup__form-input_user_name"
                  value="Жак-Ив Кусто"
-                 name="popup__edit-form-name-input"
+                 name="popup__form-user-name-input"
                  required>
           <input type="text"
                  placeholder="Профессия"
-                 class="popup__edit-form-input popup__edit-form-input_user_status"
+                 class="popup__form-input popup__form-input_user_status"
                  value="Исследователь океана"
-                 name="popup__edit-form-status-input"
+                 name="popup__form-user-status-input"
                  required>
         </fieldset>
-        <button class="popup__edit-form-submit-button"
+        <button class="popup__form-submit-button"
                 type="submit">
           Сохранить
+        </button>
+      </form>
+    </div>
+  </div>
+<!--Окно добавления карточки-->
+  <div class="popup popup_opened"> <!--popup_opened"-->
+    <div class="popup__container">
+      <button class="popup__close-button"
+              type="button"
+              aria-label="Кнопка закрывает окно"></button>
+      <form class="popup__form"
+            name="popup__user-edit-form">
+        <h2 class="popup__form-header">
+          Новое место
+        </h2>
+        <fieldset class="popup__form-inputs-area">
+          <input type="text"
+                 placeholder="Название"
+                 class="popup__form-input popup__form-input_new-place_name"
+                 name="popup__form-new-place-input"
+                 required>
+          <input type="url"
+                 placeholder="Ссылка на картинку"
+                 class="popup__form-input popup__form-input_new-place_link"
+                 name="popup__form-new-place-input"
+                 required>
+        </fieldset>
+        <button class="popup__form-submit-button"
+                type="submit">
+          Создать
         </button>
       </form>
     </div>

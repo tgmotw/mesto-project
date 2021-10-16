@@ -1,4 +1,4 @@
-.popup__edit-form-inputs-area {
+.popup__form-inputs-area {
 /*Сбрасываем стандартные настройки*/
     margin-inline: 0;
     padding-block: 0;
@@ -14,7 +14,7 @@
 }
 
 @media screen and (max-width: 530px){
-    .popup__edit-form-input-area{
+    .popup__form-inputs-area{
         margin-top: 73px;
         padding-bottom: 8px;
     }
