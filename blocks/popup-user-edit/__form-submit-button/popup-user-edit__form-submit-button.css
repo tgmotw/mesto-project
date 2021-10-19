@@ -1,4 +1,4 @@
-.popup__form-submit-button{
+.popup-user-edit__form-submit-button{
 /*Сброс стандартных настроек*/
     text-rendering: unset;
     letter-spacing: normal;
@@ -24,19 +24,19 @@
     color: #fff;
     cursor: pointer;
 }
-.popup__form-submit-button:hover{
+.popup-user-edit__form-submit-button:hover{
     opacity: .8;
 }
 
 @media screen and (max-width: 530px){
-    .popup__form-submit-button{
+    .popup-user-edit__form-submit-button{
         font-size: 14px;
         line-height: 1.21;
     }
 }
 
 @media screen and (max-width: 510px){
-    .popup__form-submit-button{
+    .popup-user-edit__form-submit-button{
         height: 47px;
         margin-top: 46px;
     }

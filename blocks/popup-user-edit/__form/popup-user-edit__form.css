@@ -1,4 +1,4 @@
-.popup__form{
+.popup-user-edit__form{
     display: flex;
     flex-direction: column;
     align-items: start;
@@ -12,7 +12,7 @@
 }
 
 @media screen and (max-width: 530px) {
-    .popup__form{
+    .popup-user-edit__form{
         padding: 27px 22px 25px 22px;
     }
 }

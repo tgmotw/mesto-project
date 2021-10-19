@@ -35,7 +35,7 @@
           <p class="profile__user-status">Исследователь океана</p>
         </div>
       </div>
-      <button class="profile__add-user-button"
+      <button class="profile__add-new-place-button"
               type="button"
               aria-label="Кнопка добавления нового пользователя"></button>
     </section>
@@ -161,31 +161,31 @@
   </footer>
 <!--Popups------------------------------------------------------------------>
 <!--Окно редактирования пользователя-->
-  <div class="popup"> <!--popup_opened"-->
-    <div class="popup__container">
-      <button class="popup__close-button"
+  <div class="popup-user-edit"> <!--popup_opened"-->
+    <div class="popup-user-edit__container">
+      <button class="popup-user-edit__close-button"
               type="button"
               aria-label="Кнопка закрывает окно"></button>
-      <form class="popup__form"
-            name="popup__user-edit-form">
-        <h2 class="popup__form-header">
+      <form class="popup-user-edit__form"
+            name="popup-user-edit__user-edit-form">
+        <h2 class="popup-user-edit__form-header">
           Редактировать&nbsp;профиль
         </h2>
-        <fieldset class="popup__form-inputs-area">
+        <fieldset class="popup-user-edit__form-inputs-area">
           <input type="text"
                  placeholder="Имя пользователя"
-                 class="popup__form-input popup__form-input_user_name"
+                 class="popup-user-edit__form-input popup-user-edit__form-input_user_name"
                  value="Жак-Ив Кусто"
-                 name="popup__form-user-name-input"
+                 name="popup-user-edit__form-user-name-input"
                  required>
           <input type="text"
                  placeholder="Профессия"
-                 class="popup__form-input popup__form-input_user_status"
+                 class="popup-user-edit__form-input popup-user-edit__form-input_user_status"
                  value="Исследователь океана"
-                 name="popup__form-user-status-input"
+                 name="popup-user-edit__form-user-status-input"
                  required>
         </fieldset>
-        <button class="popup__form-submit-button"
+        <button class="popup-user-edit__form-submit-button"
                 type="submit">
           Сохранить
         </button>
@@ -193,7 +193,7 @@
     </div>
   </div>
 <!--Окно добавления карточки-->
-  <div class="popup-add-place popup-add-place_opened"> <!--popup_opened"-->
+  <div class="popup-add-place">
     <div class="popup-add-place__container">
       <button class="popup-add-place__close-button"
               type="button"

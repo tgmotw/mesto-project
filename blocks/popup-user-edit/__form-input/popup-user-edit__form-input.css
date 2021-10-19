@@ -1,4 +1,4 @@
-.popup__form-input{
+.popup-user-edit__form-input{
     /*Сбрасываем стандартные настройки элемента*/
     border-width: 0;
     border-style: unset;
