@@ -11,4 +11,12 @@ cardLikeBtn.forEach(function (i){
     });
 });
 
+/*Настраиваем удаление карточки места*/
+let cardsCardDeleteBtn = document.querySelectorAll('.cards__card-delete-button');
 
+cardsCardDeleteBtn.forEach(function (i){
+    i.addEventListener('click',  function(){
+        if (confirm("Вы уверены, что хотите удалить карточку?")) {
+            this.closest('.cards__list-item').remove();}
+    });
+});
