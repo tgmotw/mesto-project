@@ -42,6 +42,16 @@
 /*Footer*/
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/footer/__copyright/footer__copyright.css);
+/*Popup на добавление нового места*/
+@import url(../blocks/popup-add-place/popup-add-place.css);
+@import url(../blocks/popup-add-place/_opened/popup-add-place_opened.css);
+@import url(../blocks/popup-add-place/__container/popup-add-place__container.css);
+@import url(../blocks/popup-add-place/__close-button/popup-add-place__close-button.css);
+@import url(../blocks/popup-add-place/__form/popup-add-place__form.css);
+@import url(../blocks/popup-add-place/__form-header/popup-add-place__form-header.css);
+@import url(../blocks/popup-add-place/__form-inputs-area/popup-add-place__form-inputs-area.css);
+@import url(../blocks/popup-add-place/__form-input/popup-add-place__form-input.css);
+@import url(../blocks/popup-add-place/__form-submit-button/popup-add-place__form-submit-button.css);
 
 
 

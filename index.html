@@ -193,29 +193,29 @@
     </div>
   </div>
 <!--Окно добавления карточки-->
-  <div class="popup"> <!--popup_opened"-->
-    <div class="popup__container">
-      <button class="popup__close-button"
+  <div class="popup-add-place popup-add-place_opened"> <!--popup_opened"-->
+    <div class="popup-add-place__container">
+      <button class="popup-add-place__close-button"
               type="button"
               aria-label="Кнопка закрывает окно"></button>
-      <form class="popup__form"
-            name="popup__user-edit-form">
-        <h2 class="popup__form-header">
+      <form class="popup-add-place__form"
+            name="popup-add-place__user-edit-form">
+        <h2 class="popup-add-place__form-header">
           Новое место
         </h2>
-        <fieldset class="popup__form-inputs-area">
+        <fieldset class="popup-add-place__form-inputs-area">
           <input type="text"
                  placeholder="Название"
-                 class="popup__form-input popup__form-input_new-place_name"
-                 name="popup__form-new-place-input"
+                 class="popup-add-place__form-input popup-add-place__form-input_new-place_name"
+                 name="popup-add-place__form-new-place-input"
                  required>
           <input type="url"
                  placeholder="Ссылка на картинку"
-                 class="popup__form-input popup__form-input_new-place_link"
-                 name="popup__form-new-place-input"
+                 class="popup-add-place__form-input popup-add-place__form-input_new-place_link"
+                 name="popup-add-place__form-new-place-input"
                  required>
         </fieldset>
-        <button class="popup__form-submit-button"
+        <button class="popup-add-place__form-submit-button"
                 type="submit">
           Создать
         </button>
