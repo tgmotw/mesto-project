@@ -1,6 +1,7 @@
-.popup{
+.popup-add-place{
     position: fixed;
-    display: none;
+    visibility: hidden;
+    display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
@@ -8,9 +9,12 @@
     box-sizing: border-box;
     left: 0;
     top: 0;
+
+    opacity: 0;
+    transition: all .3s ease;
 }
 
-.popup:before {
+.popup-add-place:before {
     background: #000;
     content: "";
     position: absolute;

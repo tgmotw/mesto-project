@@ -1,4 +1,4 @@
-.popup__container{
+.popup-user-edit__container{
     position: relative;
     left: 20px;
     display: flex;
@@ -9,13 +9,13 @@
 }
 
 @media screen and (max-width: 880px) {
-    .popup__container {
+    .popup-user-edit__container {
         left: calc(2.272727vw - 0.02398702 * (880px - 100vw));
     }
 }
 
 @media screen and (max-width: 530px) {
-    .popup__container {
+    .popup-user-edit__container {
         left: 0;
         width: 282px;
         height: 322px;

@@ -1,4 +1,4 @@
-.profile__add-user-button{
+.profile__add-new-place-button{
 /*Сброс стандартных настроек*/
     text-rendering: unset;
     color: unset;
@@ -20,27 +20,27 @@
     /*Кастомные настройки*/
     width: 150px;
     height: 50px;
-    background-image: url("images/profile__add-button.svg");
+    background-image: url("images/profile__add-new-place-button.svg");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
     cursor: pointer;
 }
 
-.profile__add-user-button:hover{
+.profile__add-new-place-button:hover{
     opacity: .6;
 }
 
 @media screen and (max-width: 650px){
-    .profile__add-user-button{
+    .profile__add-new-place-button{
         width: 282px;
         margin-top: 36px;
-        background-image: url("images/profile__add-button-mobile.svg");
+        background-image: url("images/profile__add-new-place-button-mobile.svg");
     }
 }
 
 @media screen and (max-width: 320px){
-    .profile__add-user-button{
+    .profile__add-new-place-button{
         margin-top: 32px;
     }
 }

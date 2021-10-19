@@ -1,4 +1,4 @@
-.popup__close-button{
+.popup-add-place__close-button{
     /*Сброс стандартных настроек*/
     text-rendering: unset;
     color: unset;
@@ -22,7 +22,7 @@
     min-height: 32px;
     margin-left: 8px;
     margin-bottom: 8px;
-    background-image: url("images/profile-edit-popup__close-button-icon.svg");
+    background-image: url("images/popup-add-place__close-button-icon.svg");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -30,18 +30,18 @@
     cursor: pointer;
 }
 
-.popup__close-button:hover{
+.popup-add-place__close-button:hover{
     opacity: .6;
 }
 
 @media screen and (max-width: 880px){
-    .popup__close-button{
+    .popup-add-place__close-button{
         width: calc(3.636364vw + 0.01267218 * (880px - 100vw));
     }
 }
 
 @media screen and (max-width: 320px) {
-    .popup__close-button{
+    .popup-add-place__close-button{
 
         width: 20px;
         height: 20px;
