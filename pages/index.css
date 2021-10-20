@@ -6,15 +6,6 @@
 @import url(../blocks/whole-page/whole-page.css);
 @import url(../blocks/page/page.css);
 @import url(../blocks/content/content.css);
-@import url(../blocks/popup-user-edit/popup-user-edit.css);
-@import url(../blocks/popup-user-edit/_opened/popup-user-edit_opened.css);
-@import url(../blocks/popup-user-edit/__container/popup-user-edit__container.css);
-@import url(../blocks/popup-user-edit/__close-button/popup-user-edit__close-button.css);
-@import url(../blocks/popup-user-edit/__form/popup-user-edit__form.css);
-@import url(../blocks/popup-user-edit/__form-header/popup-user-edit__form-header.css);
-@import url(../blocks/popup-user-edit/__form-inputs-area/popup-user-edit__form-inputs-area.css);
-@import url(../blocks/popup-user-edit/__form-input/popup-user-edit__form-input.css);
-@import url(../blocks/popup-user-edit/__form-submit-button/popup-user-edit__form-submit-button.css);
 /*Импортируем настройки блоков и элементов*/
 @import url(../blocks/header/header.css);
 @import url(../blocks/header/__logo/header__logo.css);
@@ -42,6 +33,16 @@
 /*Footer*/
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/footer/__copyright/footer__copyright.css);
+@import url(../blocks/popup-user-edit/popup-user-edit.css);
+/*Popup на редактирование профиля*/
+@import url(../blocks/popup-user-edit/_opened/popup-user-edit_opened.css);
+@import url(../blocks/popup-user-edit/__container/popup-user-edit__container.css);
+@import url(../blocks/popup-user-edit/__close-button/popup-user-edit__close-button.css);
+@import url(../blocks/popup-user-edit/__form/popup-user-edit__form.css);
+@import url(../blocks/popup-user-edit/__form-header/popup-user-edit__form-header.css);
+@import url(../blocks/popup-user-edit/__form-inputs-area/popup-user-edit__form-inputs-area.css);
+@import url(../blocks/popup-user-edit/__form-input/popup-user-edit__form-input.css);
+@import url(../blocks/popup-user-edit/__form-submit-button/popup-user-edit__form-submit-button.css);
 /*Popup на добавление нового места*/
 @import url(../blocks/popup-add-place/popup-add-place.css);
 @import url(../blocks/popup-add-place/_opened/popup-add-place_opened.css);
@@ -52,6 +53,14 @@
 @import url(../blocks/popup-add-place/__form-inputs-area/popup-add-place__form-inputs-area.css);
 @import url(../blocks/popup-add-place/__form-input/popup-add-place__form-input.css);
 @import url(../blocks/popup-add-place/__form-submit-button/popup-add-place__form-submit-button.css);
+/*Popup на просмотр картинки*/
+@import url(../blocks/popup-img-watch/popup-img-watch.css);
+@import url(../blocks/popup-img-watch/__container/popup-img-watch__container.css);
+@import url(../blocks/popup-img-watch/__close-button/popup-img-watch__close-button.css);
+@import url(../blocks/popup-img-watch/__card-img/popup-img-watch__card-img.css);
+@import url(../blocks/popup-img-watch/__img/popup-img-watch__img.css);
+@import url(../blocks/popup-img-watch/_opened/popup-img-watch_opened.css);
+@import url(../blocks/popup-img-watch/__img-title/popup-img-watch__img-title.css);
 
 /*Настройки для pixel-perfect
 @import url("../p-p.css");
