@@ -1,0 +1,9 @@
+.popup-img-watch__container{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+    min-width: 240px;
+}
+

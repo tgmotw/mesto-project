@@ -1,0 +1,9 @@
+.popup-img-watch__card-img{
+/*Сбрасываем стандартные стили*/
+    display: block;
+    margin-block: 0;
+    margin-inline: 0;
+/*Добавляем кастомные стили*/
+}
+
+
