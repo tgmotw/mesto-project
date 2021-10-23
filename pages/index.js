@@ -32,9 +32,6 @@ const cardsList = document.querySelector('.cards__list');
     /*Определяем заготовку для карточки*/
 const cardTemlate = document.querySelector('.template').content;
 
-    /*Клонируем заготовку карточки*/
-let newCard
-
     /*Декларируем функцию работы с лайком*/
 function cardLikeFunc(likeButton){
     likeButton.classList.toggle('cards__card-like-button_active');
@@ -47,6 +44,7 @@ function cardDeleteFunc(deleteButton){
 
     /*Декларируем функцию модификации клона карточки*/
 function cardCreateFunc(cardName, cardLink){
+    let newCard = cardTemlate.querySelector('.cards__list-item').cloneNode(true);
     newCard.querySelector('.cards__card-image').setAttribute('src', `${cardLink}`);
     newCard.querySelector('.cards__card-image').setAttribute('alt', `${cardName}`);
     newCard.querySelector('.cards__card-name').textContent = cardName;
@@ -64,21 +62,26 @@ function cardCreateFunc(cardName, cardLink){
         /*Открываем popup с формой*/
         popupOpenFunc(popupImgWatch);
     });
+    return newCard
 }
 
     /*Декларируем функцию добавления карточки в DOM*/
-function cardAddFunc(card, container){
-    container.append(card);
+function cardAddFunc(card, container, userAdded){
+    if (userAdded === false){
+        container.append(card);
+    }
+    if (userAdded === true) {
+        container.prepend(card);
+    }
 }
 
     /*Добавляем карточки из массива*/
 for(let k = 0; k < initialCards.length; k++){
-    newCard = cardTemlate.querySelector('.cards__list-item').cloneNode(true);
-    cardCreateFunc(initialCards[k].name, initialCards[k].link);
-    cardAddFunc(newCard, cardsList);
+    let newCard = cardCreateFunc(initialCards[k].name, initialCards[k].link);
+    cardAddFunc(newCard, cardsList, false);
 }
 
-newCard = null;
+newCard = null
 
 /*Блок работы с popups---------------------------------------------------------------------------------------------*/
     /*Определяем все popups*/
@@ -141,10 +144,12 @@ const formTwoInputsInputPlaceLink = formTwoInputsPlaceAdd.querySelector('.form-t
 
 function formTwoInputsPlaceAddSubmitHandler (evt) {
     evt.preventDefault();
-    newCard = cardTemlate.querySelector('.cards__list-item').cloneNode(true);
-    cardCreateFunc(formTwoInputsInputPlaceName.value, formTwoInputsInputPlaceLink.value);
-    cardAddFunc(newCard, cardsList);
+    let newCard = cardCreateFunc(formTwoInputsInputPlaceName.value, formTwoInputsInputPlaceLink.value);
+    cardAddFunc(newCard, cardsList, true);
     popupCloseFunc(popupPlaceAdd);
+    formTwoInputsInputPlaceName.value = '';
+    formTwoInputsInputPlaceLink.value = '';
+    newCard = null;
 }
 
 formTwoInputsPlaceAdd.addEventListener('submit', formTwoInputsPlaceAddSubmitHandler);
