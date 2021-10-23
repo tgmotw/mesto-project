@@ -44,12 +44,9 @@
 @import url(../blocks/form-two-inputs/__input/form-two-inputs__input.css);
 @import url(../blocks/form-two-inputs/__submit-button/form-two-inputs__submit-button.css);
 /*Popup на просмотр картинки*/
-@import url(../blocks/form-img-watch/popup-img-watch.css);
-@import url(../blocks/form-img-watch/__container/popup-img-watch__container.css);
-@import url(../blocks/form-img-watch/__close-button/popup-img-watch__close-button.css);
+
 @import url(../blocks/form-img-watch/form-img-watch.css);
 @import url(../blocks/form-img-watch/__img/form-img-watch__img.css);
-@import url(../blocks/form-img-watch/_opened/popup-img-watch_opened.css);
 @import url(../blocks/form-img-watch/__img-title/form-img-watch__img-title.css);
 
 /*Настройки для pixel-perfect

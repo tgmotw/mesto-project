@@ -8,12 +8,6 @@
 </head>
 
 <body class="page">
-<!--Раздел для pixel-perfect
-  <img class="p-p" src="pp-images/main-page-1280.jpg">
-  <img class="p-p" src="pp-images/edit-form-1280.jpg">
-  <img class="p-p" src="pp-images/main-page-mobile.jpg">
-  <img class="p-p" src="pp-images/edit-form-mobile.jpg">
--->
   <header class="header">
     <div class="header__logo"></div>
   </header>
@@ -42,13 +36,14 @@
 <!--Секция c фотографиями-------->
     <section class="cards">
       <ul class="cards__list">
+        <template class="template">
         <li class="cards__list-item">
           <article class="cards__card">
-            <img src="${arrCardsObjects[i].link}"
-                 alt="${arrCardsObjects[i].name}"
+            <img src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg"
+                 alt=""
                  class="cards__card-image">
             <div class="cards__card-description">
-              <h2 class="cards__card-name">${arrCardsObjects[i].name}</h2>
+              <h2 class="cards__card-name"></h2>
               <button class="cards__card-like-button"
                       type="button"
                       aria-label="Кнопка отмечает картинку как любимую">
@@ -60,6 +55,7 @@
             </button>
           </article>
         </li>
+        </template>
       </ul>
     </section>
   </main>
@@ -133,7 +129,7 @@
     </div>
   </div>
 <!--Окно просмотра картинки-->
-<div class="popup popup_img-watch popup_opened">
+<div class="popup popup_img-watch">
   <div class="popup__container">
     <button class="popup__close-button popup__close-button_img-watch"
             type="button"
@@ -149,6 +145,6 @@
   </div>
 </div>
 <!--Скрипты-------------------------------------------------------------------------------------->
-  <script src="pages/index-v.2.0.js"></script>
+  <script src="pages/index.js"></script>
 </body>
 </html>
