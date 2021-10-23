@@ -1,0 +1,18 @@
+.form-two-inputs__input{
+    /*Сбрасываем стандартные настройки элемента*/
+    border-width: 0;
+    border-style: unset;
+    border-color: unset;
+    border-image-source: initial;
+    border-image-slice: initial;
+    border-image-repeat: initial;
+    /*Настраиваем элемент*/
+    display: block;
+    width: 100%;
+    font-size: 14px;
+    line-height: 1.21;
+    color: #000;
+    margin-top: 28px;
+    padding: 0 0 11px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, .2);
+}

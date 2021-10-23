@@ -1,4 +1,5 @@
-/*Функционал по добавлению карточек мест*/
+/*Блок работы с карточкой места---------------------------------------------------------------------------------------*/
+    /*Массив с карточками*/
 const initialCards = [
     {
         name: 'Архыз',
@@ -25,144 +26,125 @@ const initialCards = [
         link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
     }
 ];
+    /*Определяем контейнер для карточек*/
+const cardsList = document.querySelector('.cards__list');
 
-const cardsBlock = document.querySelector('.cards__list');
+    /*Определяем заготовку для карточки*/
+const cardTemlate = document.querySelector('.template').content;
 
-function cardsAddFunc(arrCardsObjects, cardsBlock){
-    for (let i = 0; i < arrCardsObjects.length; i++){
-        cardsBlock.insertAdjacentHTML(
-            'beforeend',
-            `<li class="cards__list-item">
-                    <article class="cards__card">
-                      <img src="${arrCardsObjects[i].link}"
-                        alt="${arrCardsObjects[i].name}"
-                        class="cards__card-image">
-                      <div class="cards__card-description">
-                        <h2 class="cards__card-name">${arrCardsObjects[i].name}</h2>
-                        <button class="cards__card-like-button"
-                          type="button"
-                          aria-label="Кнопка отмечает картинку как любимую">
-                        </button>
-                      </div>
-                      <button class="cards__card-delete-button"
-                        type="button"
-                        aria-label="Кнопка удаляет картинку">
-                      </button>
-                    </article>
-                   </li>`
-        );
-    }
+    /*Клонируем заготовку карточки*/
+let newCard
+
+    /*Декларируем функцию работы с лайком*/
+function cardLikeFunc(likeButton){
+    likeButton.classList.toggle('cards__card-like-button_active');
 }
 
-cardsAddFunc(initialCards, cardsBlock);
+    /*Декларируем функцию удаления карточки*/
+function cardDeleteFunc(deleteButton){
+    deleteButton.closest('.cards__list-item').remove();
+}
 
-/*Настраиваем Click для кнопки Like карточки места-------------------------------------------------------------------*/
-let cardLikeBtn = document.querySelectorAll('.cards__card-like-button');
-
-cardLikeBtn.forEach(function (i){
-    i.addEventListener('click',  function(){
-        if (this.classList.contains('cards__card-like-button_active')){
-            this.classList.toggle('cards__card-like-button_active');
-        } else{
-            this.classList.toggle('cards__card-like-button_active');
-        }
+    /*Декларируем функцию модификации клона карточки*/
+function cardCreateFunc(cardName, cardLink){
+    newCard.querySelector('.cards__card-image').setAttribute('src', `${cardLink}`);
+    newCard.querySelector('.cards__card-image').setAttribute('alt', `${cardName}`);
+    newCard.querySelector('.cards__card-name').textContent = cardName;
+    newCard.querySelector('.cards__card-like-button').addEventListener('click', function (){
+        cardLikeFunc(this);
     });
-});
-
-/*Настраиваем удаление карточки места--------------------------------------------------------------------------------*/
-let cardsCardDeleteBtn = document.querySelectorAll('.cards__card-delete-button');
-
-cardsCardDeleteBtn.forEach(function (i){
-    i.addEventListener('click',  function(){
-        if (confirm("Вы уверены, что хотите удалить карточку?")) {
-            this.closest('.cards__list-item').remove();}
+    newCard.querySelector('.cards__card-delete-button').addEventListener('click', function (){
+        cardDeleteFunc(this);
     });
-});
+    newCard.querySelector('.cards__card-image').addEventListener('click', function (){
+        /*Синхронизируем данные карточки и открываемой формы*/
+        document.querySelector('.form-img-watch__img').setAttribute('src', this.src);
+        document.querySelector('.form-img-watch__img').setAttribute('alt', this.alt);
+        document.querySelector('.form-img-watch__img-title').textContent = this.alt;
+        /*Открываем popup с формой*/
+        popupOpenFunc(popupImgWatch);
+    });
+}
 
-/*Настраиваем popup добавления новой карточки------------------------------------------------------------------------*/
-const popupAddPlace = document.querySelector('.popup-add-place');
-/*Открываем окно*/
+    /*Декларируем функцию добавления карточки в DOM*/
+function cardAddFunc(card, container){
+    container.append(card);
+}
+
+    /*Добавляем карточки из массива*/
+for(let k = 0; k < initialCards.length; k++){
+    newCard = cardTemlate.querySelector('.cards__list-item').cloneNode(true);
+    cardCreateFunc(initialCards[k].name, initialCards[k].link);
+    cardAddFunc(newCard, cardsList);
+}
+
+newCard = null;
+
+/*Блок работы с popups---------------------------------------------------------------------------------------------*/
+    /*Определяем все popups*/
+const popupUserEdit= document.querySelector('.popup_user-edit');
+const popupPlaceAdd = document.querySelector('.popup_place-add');
+const popupImgWatch = document.querySelector('.popup_img-watch');
+
+    /*Определяем все элементы открытия popups*/
+const profileUserNameModifyBtn = document.querySelector('.profile__user-name-modify-button');
 const profileAddNewPlaceBtn = document.querySelector('.profile__add-new-place-button');
 
-profileAddNewPlaceBtn.addEventListener('click',  function(){
-    popupAddPlace.classList.toggle('popup-add-place_opened');
-});
-/*Закрываем окно*/
-const popupAddPlaceCloseBtn = document.querySelector('.popup-add-place__close-button');
+    /*Определяем все элементы закрытия popups*/
+const popupCloseBtn = document.querySelectorAll('.popup__close-button');
 
-popupAddPlaceCloseBtn.addEventListener('click',  function(){
-    popupAddPlace.classList.toggle('popup-add-place_opened');
-});
-
-/*Обработчик формы*/
-const placeAddForm = document.querySelector('.popup-add-place__form');
-const placeNameInput = placeAddForm.querySelector('.popup-add-place__form-input_new-place_name');
-const photoLinkInput = placeAddForm.querySelector('.popup-add-place__form-input_new-place_link');
-const cardsCardName = document.querySelector('.cards__card-name');
-
-function placeAddFormSubmitHandler (evt) {
-    evt.preventDefault();
-    cardsCardName.textContent = placeNameInput.value;
-    let initialCard =[{name: placeNameInput.value, link: photoLinkInput.value}];
-    cardsAddFunc(initialCard, cardsBlock);
-    popupAddPlace.classList.toggle('popup-add-place_opened');
+    /*Декларируем функцию открытия и закрытия*/
+function popupOpenFunc(popupObject){
+    popupObject.classList.toggle(`popup_opened`);
 }
 
-placeAddForm.addEventListener('submit', placeAddFormSubmitHandler);
+function popupCloseFunc(popupObject){
+    popupObject.classList.remove(`popup_opened`);
+}
 
-/*Настраиваем popup редактирования пользователя----------------------------------------------------------------------*/
-const popupUserEdit = document.querySelector('.popup-user-edit');
-/*Открываем окно*/
-const profileUserNameModifyBtn = document.querySelector('.profile__user-name-modify-button');
-
-profileUserNameModifyBtn.addEventListener('click',  function(){
-    popupUserEdit.classList.toggle('popup-user-edit_opened');
-});
-/*Закрываем окно*/
-const popupUserEditCloseBtn = document.querySelector('.popup-user-edit__close-button');
-
-popupUserEditCloseBtn.addEventListener('click',  function(){
-    popupUserEdit.classList.toggle('popup-user-edit_opened');
+    /*Вешаем лиссенеры на элементы открытия и закрытия popups*/
+profileUserNameModifyBtn.addEventListener('click', function (){
+    popupOpenFunc(popupUserEdit);
 });
 
-/*Обработчик формы*/
-const userEditForm = document.querySelector('.popup-user-edit__form');
-const nameInput = userEditForm.querySelector('.popup-user-edit__form-input_user_name');
-const jobInput = userEditForm.querySelector('.popup-user-edit__form-input_user_status');
+profileAddNewPlaceBtn.addEventListener('click', function (){
+    popupOpenFunc(popupPlaceAdd);
+});
+
+popupCloseBtn.forEach(function (i){
+    i.addEventListener('click',  function(){
+        popupCloseFunc(this.closest('.popup'));
+    });
+});
+
+/*Блок работы с формами---------------------------------------------------------------------------------------*/
+    /*Форма редактирования профиля*/
+const formTwoInputsUserEdit = document.querySelector('.form-two-inputs_user-edit');
+const formTwoInputsInputUserName = formTwoInputsUserEdit.querySelector('.form-two-inputs__input_user_name');
+const formTwoInputsInputUserStatus = formTwoInputsUserEdit.querySelector('.form-two-inputs__input_user_status');
 const profileUserName = document.querySelector('.profile__user-name');
 const profileUserStatus = document.querySelector('.profile__user-status');
 
-function userEditFormSubmitHandler (evt) {
+function formTwoInputsUserEditSubmitHandler (evt) {
     evt.preventDefault();
-    profileUserName.textContent = nameInput.value;
-    profileUserStatus.textContent = jobInput.value;
-    popupUserEdit.classList.toggle('popup-user-edit_opened');
+    profileUserName.textContent = formTwoInputsInputUserName.value;
+    profileUserStatus.textContent = formTwoInputsInputUserStatus.value;
+    popupCloseFunc(popupUserEdit);
 }
 
-userEditForm.addEventListener('submit', userEditFormSubmitHandler);
+formTwoInputsUserEdit.addEventListener('submit', formTwoInputsUserEditSubmitHandler);
 
+    /*Форма добавления каточки нового места*/
+const formTwoInputsPlaceAdd = document.querySelector('.form-two-inputs_place-add');
+const formTwoInputsInputPlaceName = formTwoInputsPlaceAdd.querySelector('.form-two-inputs__input_place_name');
+const formTwoInputsInputPlaceLink = formTwoInputsPlaceAdd.querySelector('.form-two-inputs__input_place_link');
 
-/*Настраиваем popup просмотра картинки-------------------------------------------------------------------------------*/
-const popupImgWatch = document.querySelector('.popup-img-watch');
-const popupImgWatchImg = document.querySelector('.popup-img-watch__img');
-const popupImgWatchImgTitle = document.querySelector('.popup-img-watch__img-title');
+function formTwoInputsPlaceAddSubmitHandler (evt) {
+    evt.preventDefault();
+    newCard = cardTemlate.querySelector('.cards__list-item').cloneNode(true);
+    cardCreateFunc(formTwoInputsInputPlaceName.value, formTwoInputsInputPlaceLink.value);
+    cardAddFunc(newCard, cardsList);
+    popupCloseFunc(popupPlaceAdd);
+}
 
-/*Открываем окно*/
-const cardsCardImage = document.querySelectorAll('.cards__card-image');
-
-cardsCardImage.forEach(function (i){
-    i.addEventListener('click',  function(){
-        popupImgWatchImg.setAttribute('src', this.getAttribute('src'));
-        popupImgWatchImgTitle.textContent = this.closest('.cards__card').querySelector('.cards__card-name').textContent;
-        popupImgWatch.classList.toggle('popup-img-watch_opened');
-    });
-});
-/*Закрываем окно*/
-const popupImgWatchCloseBtn = document.querySelector('.popup-img-watch__close-button');
-
-popupImgWatchCloseBtn.addEventListener('click',  function(){
-    popupImgWatch.classList.toggle('popup-img-watch_opened');
-});
-
-
-
+formTwoInputsPlaceAdd.addEventListener('submit', formTwoInputsPlaceAddSubmitHandler);
