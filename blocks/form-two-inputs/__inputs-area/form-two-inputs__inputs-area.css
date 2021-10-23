@@ -1,0 +1,21 @@
+.form-two-inputs__inputs-area {
+/*Сбрасываем стандартные настройки*/
+    margin-inline: 0;
+    padding-block: 0;
+    padding-inline: 0;
+    border-width: 0;
+    border-style: unset;
+    border-color: unset;
+    /*Настраиваем элемент*/
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    margin-top: 31px;
+}
+
+@media screen and (max-width: 530px){
+    .form-two-inputs__inputs-area{
+        margin-top: 73px;
+        padding-bottom: 8px;
+    }
+}

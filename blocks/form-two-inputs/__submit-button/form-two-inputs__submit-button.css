@@ -1,0 +1,43 @@
+.form-two-inputs__submit-button{
+/*Сброс стандартных настроек*/
+    text-rendering: unset;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-indent: 0;
+    text-shadow: none;
+    text-align: center;
+    align-items: unset;
+    font: unset;
+    padding: 0;
+    border-width: 0;
+    border-style: unset;
+    border-color: unset;
+    border-image: unset;
+/*Кастомные настройки*/
+    display: block;
+    width: 100%;
+    margin-top: 48px;
+    height: 50px;
+    background-color: #000;
+    font-size: 18px;
+    line-height: 1.22;
+    color: #fff;
+    cursor: pointer;
+}
+.form-two-inputs__submit-button:hover{
+    opacity: .8;
+}
+
+@media screen and (max-width: 530px){
+    .form-two-inputs__submit-button{
+        font-size: 14px;
+        line-height: 1.21;
+    }
+}
+
+@media screen and (max-width: 510px){
+    .form-two-inputs__submit-button{
+        height: 47px;
+        margin-top: 46px;
+    }
+}

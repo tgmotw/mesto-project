@@ -45,7 +45,7 @@ function cardsAddFunc(arrCardsObjects, cardsBlock){
                         </button>
                       </div>
                       <button class="cards__card-delete-button"
-                        type="button"
+                        type="button" 
                         aria-label="Кнопка удаляет картинку">
                       </button>
                     </article>
@@ -111,7 +111,7 @@ function placeAddFormSubmitHandler (evt) {
 placeAddForm.addEventListener('submit', placeAddFormSubmitHandler);
 
 /*Настраиваем popup редактирования пользователя----------------------------------------------------------------------*/
-const popupUserEdit = document.querySelector('.popup-user-edit');
+const popupUserEdit = document.querySelector('.popup');
 /*Открываем окно*/
 const profileUserNameModifyBtn = document.querySelector('.profile__user-name-modify-button');
 
@@ -143,7 +143,7 @@ userEditForm.addEventListener('submit', userEditFormSubmitHandler);
 
 
 /*Настраиваем popup просмотра картинки-------------------------------------------------------------------------------*/
-const popupImgWatch = document.querySelector('.popup-img-watch');
+const popupImgWatch = document.querySelector('.form-img-watch');
 const popupImgWatchImg = document.querySelector('.popup-img-watch__img');
 const popupImgWatchImgTitle = document.querySelector('.popup-img-watch__img-title');
 

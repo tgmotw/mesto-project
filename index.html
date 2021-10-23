@@ -42,6 +42,24 @@
 <!--Секция c фотографиями-------->
     <section class="cards">
       <ul class="cards__list">
+        <li class="cards__list-item">
+          <article class="cards__card">
+            <img src="${arrCardsObjects[i].link}"
+                 alt="${arrCardsObjects[i].name}"
+                 class="cards__card-image">
+            <div class="cards__card-description">
+              <h2 class="cards__card-name">${arrCardsObjects[i].name}</h2>
+              <button class="cards__card-like-button"
+                      type="button"
+                      aria-label="Кнопка отмечает картинку как любимую">
+              </button>
+            </div>
+            <button class="cards__card-delete-button"
+                    type="button"
+                    aria-label="Кнопка удаляет картинку">
+            </button>
+          </article>
+        </li>
       </ul>
     </section>
   </main>
@@ -53,31 +71,31 @@
   </footer>
 <!--Popups------------------------------------------------------------------>
 <!--Окно редактирования пользователя-->
-  <div class="popup-user-edit"> <!--popup_opened"-->
-    <div class="popup-user-edit__container">
-      <button class="popup-user-edit__close-button"
+  <div class="popup popup_user-edit"> <!--popup_opened"-->
+    <div class="popup__container">
+      <button class="popup__close-button popup__close-button_user-edit"
               type="button"
               aria-label="Кнопка закрывает окно"></button>
-      <form class="popup-user-edit__form"
-            name="popup-user-edit__user-edit-form">
-        <h2 class="popup-user-edit__form-header">
+      <form class="form-two-inputs form-two-inputs_user-edit"
+            name="form-two-inputs_user-edit">
+        <h2 class="form-two-inputs__header">
           Редактировать&nbsp;профиль
         </h2>
-        <fieldset class="popup-user-edit__form-inputs-area">
+        <fieldset class="form-two-inputs__inputs-area">
           <input type="text"
                  placeholder="Имя пользователя"
-                 class="popup-user-edit__form-input popup-user-edit__form-input_user_name"
+                 class="form-two-inputs__input form-two-inputs__input_user_name"
                  value="Жак-Ив Кусто"
-                 name="popup-user-edit__form-user-name-input"
+                 name="form-two-inputs__input_user_name"
                  required>
           <input type="text"
                  placeholder="Профессия"
-                 class="popup-user-edit__form-input popup-user-edit__form-input_user_status"
+                 class="form-two-inputs__input form-two-inputs__input_user_status"
                  value="Исследователь океана"
-                 name="popup-user-edit__form-user-status-input"
+                 name="form-two-inputs__input_user_status"
                  required>
         </fieldset>
-        <button class="popup-user-edit__form-submit-button"
+        <button class="form-two-inputs__submit-button form-two-inputs__submit-button_user-edit"
                 type="submit">
           Сохранить
         </button>
@@ -85,29 +103,29 @@
     </div>
   </div>
 <!--Окно добавления карточки-->
-  <div class="popup-add-place">
-    <div class="popup-add-place__container">
-      <button class="popup-add-place__close-button"
+  <div class="popup popup_place-add">
+    <div class="popup__container">
+      <button class="popup__close-button popup__close-button_place-add"
               type="button"
               aria-label="Кнопка закрывает окно"></button>
-      <form class="popup-add-place__form"
-            name="popup-add-place__user-edit-form">
-        <h2 class="popup-add-place__form-header">
+      <form class="form-two-inputs form-two-inputs_place-add"
+            name="form-two-inputs_place-add">
+        <h2 class="form-two-inputs__header">
           Новое место
         </h2>
-        <fieldset class="popup-add-place__form-inputs-area">
+        <fieldset class="form-two-inputs__inputs-area">
           <input type="text"
                  placeholder="Название"
-                 class="popup-add-place__form-input popup-add-place__form-input_new-place_name"
-                 name="popup-add-place__form-new-place-input"
+                 class="form-two-inputs__input form-two-inputs__input_place_name"
+                 name="form-two-inputs__input_place_name"
                  required>
           <input type="url"
                  placeholder="Ссылка на картинку"
-                 class="popup-add-place__form-input popup-add-place__form-input_new-place_link"
-                 name="popup-add-place__form-new-place-input"
+                 class="form-two-inputs__input form-two-inputs__input_place_link"
+                 name="form-two-inputs__input_place_link"
                  required>
         </fieldset>
-        <button class="popup-add-place__form-submit-button"
+        <button class="form-two-inputs__submit-button"
                 type="submit">
           Создать
         </button>
@@ -115,20 +133,22 @@
     </div>
   </div>
 <!--Окно просмотра картинки-->
-<div class="popup-img-watch">
-  <div class="popup-img-watch__container">
-    <button class="popup-img-watch__close-button"
+<div class="popup popup_img-watch popup_opened">
+  <div class="popup__container">
+    <button class="popup__close-button popup__close-button_img-watch"
             type="button"
             aria-label="Кнопка закрывает окно"></button>
-    <figure class="popup-img-watch__card-img">
-      <img src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg" alt="" class="popup-img-watch__img">
-      <figcaption class="popup-img-watch__img-title">
+    <figure class="form-img-watch">
+      <img src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg"
+           alt=""
+           class="form-img-watch__img">
+      <figcaption class="form-img-watch__img-title">
         Новое место
       </figcaption>
     </figure>
   </div>
 </div>
 <!--Скрипты-------------------------------------------------------------------------------------->
-  <script src="pages/index.js"></script>
+  <script src="pages/index-v.2.0.js"></script>
 </body>
 </html>

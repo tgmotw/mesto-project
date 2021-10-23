@@ -1,0 +1,58 @@
+.popup__close-button{
+    /*Сброс стандартных настроек*/
+    text-rendering: unset;
+    color: unset;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-indent: 0;
+    text-shadow: none;
+    text-align: center;
+    align-items: unset;
+    background-color: unset;
+    box-sizing: border-box;
+    font: unset;
+    padding: 0;
+    border-width: 0;
+    border-style: unset;
+    border-color: unset;
+    border-image: unset;
+/*Кастомные настройки*/
+    display:block;
+    position: relative;
+    left: 40px;
+    width: 32px;
+    min-height: 32px;
+    margin-left: 8px;
+    margin-bottom: 8px;
+    background-image: url("images/popup__close-button-icon.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    align-self: flex-end;
+    cursor: pointer;
+}
+
+.popup__close-button:hover{
+    opacity: .6;
+}
+
+@media screen and (max-width: 880px){
+    .popup__close-button{
+        width: calc(3.636364vw + 0.01267218 * (880px - 100vw));
+    }
+}
+
+@media screen and (max-width: 530px) {
+    .popup__close-button{
+        left: 0;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .popup__close-button{
+        width: 20px;
+        height: 20px;
+        margin-left: 0;
+        margin-bottom: 12px;
+    }
+}
