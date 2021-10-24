@@ -33,26 +33,26 @@ const cardsList = document.querySelector('.cards__list');
 const cardTemlate = document.querySelector('.template').content;
 
     /*Декларируем функцию работы с лайком*/
-function cardLikeFunc(likeButton){
-    likeButton.classList.toggle('cards__card-like-button_active');
+function cardLike(likeButton){
+    likeButton.classList.add('cards__card-like-button_active');
 }
 
     /*Декларируем функцию удаления карточки*/
-function cardDeleteFunc(deleteButton){
+function cardDelete(deleteButton){
     deleteButton.closest('.cards__list-item').remove();
 }
 
     /*Декларируем функцию модификации клона карточки*/
-function cardCreateFunc(cardName, cardLink){
-    let newCard = cardTemlate.querySelector('.cards__list-item').cloneNode(true);
+function cardCreate(cardName, cardLink){
+    const newCard = cardTemlate.querySelector('.cards__list-item').cloneNode(true);
     newCard.querySelector('.cards__card-image').setAttribute('src', `${cardLink}`);
     newCard.querySelector('.cards__card-image').setAttribute('alt', `${cardName}`);
     newCard.querySelector('.cards__card-name').textContent = cardName;
     newCard.querySelector('.cards__card-like-button').addEventListener('click', function (){
-        cardLikeFunc(this);
+        cardLike(this);
     });
     newCard.querySelector('.cards__card-delete-button').addEventListener('click', function (){
-        cardDeleteFunc(this);
+        cardDelete(this);
     });
     newCard.querySelector('.cards__card-image').addEventListener('click', function (){
         /*Синхронизируем данные карточки и открываемой формы*/
@@ -60,13 +60,13 @@ function cardCreateFunc(cardName, cardLink){
         document.querySelector('.form-img-watch__img').setAttribute('alt', this.alt);
         document.querySelector('.form-img-watch__img-title').textContent = this.alt;
         /*Открываем popup с формой*/
-        popupOpenFunc(popupImgWatch);
+        popupOpen(popupImgWatch);
     });
     return newCard
 }
 
     /*Декларируем функцию добавления карточки в DOM*/
-function cardAddFunc(card, container, userAdded){
+function cardAdd(card, container, userAdded){
     if (userAdded === false){
         container.append(card);
     }
@@ -76,12 +76,9 @@ function cardAddFunc(card, container, userAdded){
 }
 
     /*Добавляем карточки из массива*/
-for(let k = 0; k < initialCards.length; k++){
-    let newCard = cardCreateFunc(initialCards[k].name, initialCards[k].link);
-    cardAddFunc(newCard, cardsList, false);
-}
-
-newCard = null
+initialCards.forEach(function (arrElement){
+    cardAdd(cardCreate(arrElement.name, arrElement.link), cardsList, false);
+});
 
 /*Блок работы с popups---------------------------------------------------------------------------------------------*/
     /*Определяем все popups*/
@@ -97,26 +94,26 @@ const profileAddNewPlaceBtn = document.querySelector('.profile__add-new-place-bu
 const popupCloseBtn = document.querySelectorAll('.popup__close-button');
 
     /*Декларируем функцию открытия и закрытия*/
-function popupOpenFunc(popupObject){
-    popupObject.classList.toggle(`popup_opened`);
+function popupOpen(popupObject){
+    popupObject.classList.add(`popup_opened`);
 }
 
-function popupCloseFunc(popupObject){
+function popupClose(popupObject){
     popupObject.classList.remove(`popup_opened`);
 }
 
     /*Вешаем лиссенеры на элементы открытия и закрытия popups*/
 profileUserNameModifyBtn.addEventListener('click', function (){
-    popupOpenFunc(popupUserEdit);
+    popupOpen(popupUserEdit);
 });
 
 profileAddNewPlaceBtn.addEventListener('click', function (){
-    popupOpenFunc(popupPlaceAdd);
+    popupOpen(popupPlaceAdd);
 });
 
-popupCloseBtn.forEach(function (i){
-    i.addEventListener('click',  function(){
-        popupCloseFunc(this.closest('.popup'));
+popupCloseBtn.forEach(function (arrElement){
+    arrElement.addEventListener('click',  function(){
+        popupClose(this.closest('.popup'));
     });
 });
 
@@ -132,7 +129,7 @@ function formTwoInputsUserEditSubmitHandler (evt) {
     evt.preventDefault();
     profileUserName.textContent = formTwoInputsInputUserName.value;
     profileUserStatus.textContent = formTwoInputsInputUserStatus.value;
-    popupCloseFunc(popupUserEdit);
+    popupClose(popupUserEdit);
 }
 
 formTwoInputsUserEdit.addEventListener('submit', formTwoInputsUserEditSubmitHandler);
@@ -142,14 +139,11 @@ const formTwoInputsPlaceAdd = document.querySelector('.form-two-inputs_place-add
 const formTwoInputsInputPlaceName = formTwoInputsPlaceAdd.querySelector('.form-two-inputs__input_place_name');
 const formTwoInputsInputPlaceLink = formTwoInputsPlaceAdd.querySelector('.form-two-inputs__input_place_link');
 
-function formTwoInputsPlaceAddSubmitHandler (evt) {
+function formTwoInputsPlaceAddSubmitHandler (evt){
     evt.preventDefault();
-    let newCard = cardCreateFunc(formTwoInputsInputPlaceName.value, formTwoInputsInputPlaceLink.value);
-    cardAddFunc(newCard, cardsList, true);
-    popupCloseFunc(popupPlaceAdd);
-    formTwoInputsInputPlaceName.value = '';
-    formTwoInputsInputPlaceLink.value = '';
-    newCard = null;
+    cardAdd(cardCreate(formTwoInputsInputPlaceName.value, formTwoInputsInputPlaceLink.value), cardsList, true);
+    popupClose(popupPlaceAdd);
+    formTwoInputsPlaceAdd.reset();
 }
 
 formTwoInputsPlaceAdd.addEventListener('submit', formTwoInputsPlaceAddSubmitHandler);
