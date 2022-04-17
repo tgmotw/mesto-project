@@ -42,7 +42,10 @@
 @import url(../blocks/form-two-inputs/__header/form-two-inputs__header.css);
 @import url(../blocks/form-two-inputs/__inputs-area/form-two-inputs__inputs-area.css);
 @import url(../blocks/form-two-inputs/__input/form-two-inputs__input.css);
+@import url(../blocks/form-two-inputs/__input/_invalid/form-two-inputs__input_invalid.css);
 @import url(../blocks/form-two-inputs/__submit-button/form-two-inputs__submit-button.css);
+@import url(../blocks/form-two-inputs/__submit-button/_active/form-two-inputs__submit-button_active.css);
+@import url(../blocks/form-two-inputs/__error-massage/form-two-inputs__error-message.css);
 /*Popup на просмотр картинки*/
 
 @import url(../blocks/form-img-watch/form-img-watch.css);

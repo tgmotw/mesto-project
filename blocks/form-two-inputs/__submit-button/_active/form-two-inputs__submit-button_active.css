@@ -1,0 +1,11 @@
+.form-two-inputs__submit-button_active{
+    /*Кастомные настройки*/
+    background-color: #000;
+    font-size: 18px;
+    line-height: 1.22;
+    color: #fff;
+    cursor: pointer;
+}
+.form-two-inputs__submit-button:hover{
+    opacity: .8;
+}
