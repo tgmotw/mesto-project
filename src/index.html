@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Научиться учиться</title>
-  <link rel="stylesheet" href="./pages/index.css">
 </head>
 
 <body class="page">
@@ -16,22 +15,24 @@
   <main class="content">
     <section class="profile">
       <div class="profile__current-user">
-        <img src="./blocks/profile/__user-avatar/profile__user-avatar.jpg"
+        <img src="../blocks/profile/__user-avatar/profile__user-avatar.jpg"
              alt="Портретное фото Жак-Ив Кусто"
              class="profile__user-avatar">
         <div  class="profile__user-description">
           <div class="profile__user-name-container">
             <h1 class="profile__user-name">Жак&#8209;Ив&nbsp;Кусто</h1>
-            <button class="profile__user-name-modify-button"
+            <button class="popup__open-button profile__user-name-modify-button"
+                    id="user-edit"
                     type="button"
                     aria-label="Кнопка редактирования профиля пользователя"></button>
           </div>
           <p class="profile__user-status">Исследователь океана</p>
         </div>
       </div>
-      <button class="profile__add-new-place-button"
+      <button class="popup__open-button profile__add-new-place-button"
+              id="place-add"
               type="button"
-              aria-label="Кнопка добавления нового пользователя"></button>
+              aria-label="Кнопка добавления новой картинки"></button>
     </section>
 <!--Секция c фотографиями-------->
     <section class="cards">
@@ -164,8 +165,11 @@
     </figure>
   </div>
 </div>
-<!--Скрипты-------------------------------------------------------------------------------------->
+<!--Скрипты-----------------------------------------------------------------------------------
   <script src="pages/index.js"></script>
-  <script src="components/validate.js"></script>
+  <script type="module" src="../components/validate.js"></script>
+  <script type="module" src="../components/popups.js"></script>
+  <script type="module" src="../components/cards.js"></script>
+  --->
 </body>
 </html>

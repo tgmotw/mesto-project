@@ -14,14 +14,14 @@ function enableValidation(){
         formsListItem.addEventListener('submit', (evt) => {
             evt.preventDefault();
         });
-        setEventListeners(formsListItem);
+        inputsSetEventListeners(formsListItem);
     });
 }
 /*Функция навешивания лиссенеров на инпуты*/
-function setEventListeners(formsListItem){
+function inputsSetEventListeners(formsListItem){
     const inputsList = Array.from(formsListItem.querySelectorAll(config.inputsSelector));
     toggleSubmitBtn(formsListItem, inputsList);
-    inputsList.forEach((inputsListItem)=> {
+    inputsList.forEach((inputsListItem) => {
         inputsListItem.addEventListener('input', (evt) => {
             isValid(formsListItem, inputsListItem);
             toggleSubmitBtn(formsListItem, inputsList);
