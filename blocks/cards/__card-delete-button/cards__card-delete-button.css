@@ -23,7 +23,7 @@
     left: 244px;
     width:18px;
     height:19px;
-    background-image: url("images/cards__card-delete-button.svg");
+    background-image: url("../../../vendor/images/cards__card-delete-button.svg");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -31,6 +31,6 @@
 }
 
 .cards__card-delete-button:hover{
-    background-image: url("images/cards__card-delete-button_hover.svg");
+    background-image: url("../../../vendor/images/cards__card-delete-button_hover.svg");
     opacity: .6;
 }

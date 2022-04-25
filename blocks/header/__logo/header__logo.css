@@ -1,5 +1,5 @@
 .header__logo{
-    background-image: url("./header__logo.svg");
+    background-image: url("../../../vendor/images/header__logo.svg");
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;

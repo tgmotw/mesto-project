@@ -20,7 +20,7 @@
 /*Кастомные настройки*/
     width: 24px;
     height: 24px;
-    background-image: url("images/profile__edit-button.svg");
+    background-image: url("../../../vendor/images/profile__edit-button.svg");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;

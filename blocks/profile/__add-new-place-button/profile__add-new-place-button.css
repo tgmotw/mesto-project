@@ -20,7 +20,7 @@
     /*Кастомные настройки*/
     width: 150px;
     height: 50px;
-    background-image: url("images/profile__add-new-place-button.svg");
+    background-image: url("../../../vendor/images/profile__add-new-place-button.svg");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -35,7 +35,7 @@
     .profile__add-new-place-button{
         width: 282px;
         margin-top: 36px;
-        background-image: url("images/profile__add-new-place-button-mobile.svg");
+        background-image: url("../../../vendor/images/profile__add-new-place-button-mobile.svg");
     }
 }
 

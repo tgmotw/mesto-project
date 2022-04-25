@@ -1,0 +1,10 @@
+.form-two-inputs__error-message{
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    height: 12px;
+    margin-top: 5px;
+    font-size: 12px;
+    line-height: 1.25;
+    color: #ff0000;
+}
