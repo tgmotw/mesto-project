@@ -1,3 +1,11 @@
+/*Экспорты*/
+export {config,
+        enableValidation,
+        toggleSubmitBtn}
+
+/*Экспорты*/
+import {formExecution} from "./forms";
+
 /*Конфигурация*/
 const config = {
     formsSelector: '.form-two-inputs',
@@ -13,6 +21,7 @@ function enableValidation(){
     formsList.forEach((formsListItem) => {
         formsListItem.addEventListener('submit', (evt) => {
             evt.preventDefault();
+            formExecution(formsListItem);
         });
         inputsSetEventListeners(formsListItem);
     });
@@ -38,7 +47,7 @@ function isValid(formsListItem, inputsListItem){
 }
 /*Функция проверки валидности всех полей*/
 function inputsValidityCheck(inputsList){
-    return inputsList.some((element, index, array) => {
+    return inputsList.some((element) => {
         return !element.validity.valid;
     });
 }
@@ -55,13 +64,13 @@ function hideInputError(formsListItem, inputsListItem){
     inputsListItem.classList.remove(config.inputsInValidSelector);
 }
 /*Функция активирования кнопки Сабмит*/
-function toggleSubmitBtn(formsListItem, inputsList){
+function toggleSubmitBtn(formsListItem, inputsList) {
     const submitBtn = formsListItem.querySelector(config.submitBtnSelector);
-    if (inputsValidityCheck(inputsList)){
+    if (inputsValidityCheck(inputsList)) {
+        submitBtn.setAttribute('disabled', 'disabled');
         submitBtn.classList.remove(config.submitBtnActiveSelector);
-    }else{
+    } else {
         submitBtn.classList.add(config.submitBtnActiveSelector);
+        submitBtn.removeAttribute('disabled');
     }
 }
-
-enableValidation(config);

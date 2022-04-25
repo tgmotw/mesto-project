@@ -1,4 +1,10 @@
-export {popupOpen}
+export {popupOpen,
+        popupClose,
+        popupOpenBtnsSetEventListeners,
+        popupCloseBtnsSetEventListeners,
+        popupCloseBtnsList,
+        popupOpenBtnsList}
+
 
 const popupOpenBtnsList = Array.from(document.querySelectorAll('.popup__open-button'));
 const popupCloseBtnsList = Array.from(document.querySelectorAll('.popup__close-button'));
@@ -24,7 +30,7 @@ function clickTarget(evt){
         popupClose(evt.target.closest('.popup'))
     }
 }
-/*Декларируем функцию определения клавиши таргета клика*/
+/*Декларируем функцию определения клавиши esc*/
 function keyDownEsc(evt){
     if (evt.key === "Escape"){
         const popupsList = Array.from(document.querySelectorAll('.popup'))
@@ -35,6 +41,7 @@ function keyDownEsc(evt){
         });
     }
 }
+
 /*Декларируем функцию добавления лиссенеров на кнопки открытия окон*/
 function popupOpenBtnsSetEventListeners(popupOpenBtnsList){
     popupOpenBtnsList.forEach((popupOpenBtn) => {
@@ -53,6 +60,3 @@ function popupCloseBtnsSetEventListeners(popupCloseBtnsList){
         });
     });
 }
-
-popupOpenBtnsSetEventListeners(popupOpenBtnsList);
-popupCloseBtnsSetEventListeners(popupCloseBtnsList);

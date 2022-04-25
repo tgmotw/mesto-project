@@ -1,3 +1,7 @@
+/*Экспорты*/
+export {cardsList, initialCards, cardAdd, cardCreate}
+
+/*Импорты*/
 import {popupOpen} from "./popups.js";
 
 /*Массив с карточками*/
@@ -65,7 +69,6 @@ function cardCreate(cardName, cardLink){
         document.querySelector('.form-img-watch__img').setAttribute('alt', this.alt);
         document.querySelector('.form-img-watch__img-title').textContent = this.alt;
         /*Открываем popup с формой*/
-        console.log(popupImgWatch)
         popupOpen(popupImgWatch);
     });
     return newCard
@@ -80,8 +83,3 @@ function cardAdd(card, container, userAdded){
         container.prepend(card);
     }
 }
-
-/*Добавляем карточки из массива*/
-initialCards.forEach(function (arrElement){
-    cardAdd(cardCreate(arrElement.name, arrElement.link), cardsList, false);
-});
