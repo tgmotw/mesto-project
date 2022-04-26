@@ -16,7 +16,7 @@ const config = {
 }
 
 /*Функция валидации формы*/
-function enableValidation(){
+function enableValidation(config){
     const formsList = Array.from(document.querySelectorAll(config.formsSelector));
     formsList.forEach((formsListItem) => {
         formsListItem.addEventListener('submit', (evt) => {
