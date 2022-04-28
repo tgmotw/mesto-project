@@ -1,5 +1,5 @@
 /*Импорты*/
-import {cardAdd,cardsList, cardCreate} from "./cards";
+import {addCard,cardsList, createCard} from "./cards";
 import {popupClose} from "./popups";
 import {config, toggleSubmitBtn} from "./validate";
 
@@ -9,7 +9,7 @@ export {formExecution};
 /*Функция работы с формой*/
 function formExecution(formName){
     if (formName.id === 'form-two-inputs_place-add'){
-        cardAdd(cardCreate(document.getElementById('form-two-inputs__input-place-name').value,
+        addCard(createCard(document.getElementById('form-two-inputs__input-place-name').value,
                            document.getElementById('form-two-inputs__input-place-link').value),
                            cardsList, true);
         formName.reset();

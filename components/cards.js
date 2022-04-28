@@ -1,5 +1,5 @@
 /*Экспорты*/
-export {cardsList, initialCards, cardAdd, cardCreate}
+export {cardsList, initialCards, addCard, createCard}
 
 /*Импорты*/
 import {popupOpen} from "./popups.js";
@@ -36,38 +36,41 @@ const initialCards = [
 const cardsList = document.querySelector('.cards__list');
 
 /*Определяем заготовку для карточки*/
-const cardTemlate = document.querySelector('.template').content;
+const cardTemplate = document.querySelector('.template').content;
 
 /*Определяем попап*/
 const popupImgWatch = document.querySelector('.popup_img-watch');
 
 /*Декларируем функцию работы с лайком*/
-function cardLike(likeButton){
-    likeButton.classList.add('cards__card-like-button_active');
+function likeCard(likeButton){
+    likeButton.classList.toggle('cards__card-like-button_active');
 }
 
 /*Декларируем функцию удаления карточки*/
-function cardDelete(deleteButton){
+function deleteCard(deleteButton){
     deleteButton.closest('.cards__list-item').remove();
 }
 
 /*Декларируем функцию модификации клона карточки*/
-function cardCreate(cardName, cardLink){
-    const newCard = cardTemlate.querySelector('.cards__list-item').cloneNode(true);
-    newCard.querySelector('.cards__card-image').setAttribute('src', `${cardLink}`);
-    newCard.querySelector('.cards__card-image').setAttribute('alt', `${cardName}`);
+function createCard(cardName, cardLink){
+    const newCard = cardTemplate.querySelector('.cards__list-item').cloneNode(true);
+    const newCardImage = newCard.querySelector('.cards__card-image');
+    const popupImage = document.querySelector('.form-img-watch__img');
+
+    newCardImage.setAttribute('src', `${cardLink}`);
+    newCardImage.setAttribute('alt', `${cardName}`);
     newCard.querySelector('.cards__card-name').textContent = cardName;
-    newCard.querySelector('.cards__card-like-button').addEventListener('click', function (){
-        cardLike(this);
+    newCard.querySelector('.cards__card-like-button').addEventListener('click', (evt) => {
+        likeCard(evt.target);
     });
-    newCard.querySelector('.cards__card-delete-button').addEventListener('click', function (){
-        cardDelete(this);
+    newCard.querySelector('.cards__card-delete-button').addEventListener('click', (evt) => {
+        deleteCard(evt.target);
     });
-    newCard.querySelector('.cards__card-image').addEventListener('click', function (){
+    newCardImage.addEventListener('click', (evt) => {
         /*Синхронизируем данные карточки и открываемой формы*/
-        document.querySelector('.form-img-watch__img').setAttribute('src', this.src);
-        document.querySelector('.form-img-watch__img').setAttribute('alt', this.alt);
-        document.querySelector('.form-img-watch__img-title').textContent = this.alt;
+        popupImage.setAttribute('src', evt.target.src);
+        popupImage.setAttribute('alt', evt.target.alt);
+        document.querySelector('.form-img-watch__img-title').textContent = evt.target.alt;
         /*Открываем popup с формой*/
         popupOpen(popupImgWatch);
     });
@@ -75,7 +78,7 @@ function cardCreate(cardName, cardLink){
 }
 
 /*Декларируем функцию добавления карточки в DOM*/
-function cardAdd(card, container, userAdded){
+function addCard(card, container, userAdded){
     if (userAdded === false){
         container.append(card);
     }
