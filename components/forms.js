@@ -1,25 +1,31 @@
 /*Импорты*/
 import {addCard,cardsList, createCard} from "./cards";
-import {popupClose} from "./popups";
-import {config, toggleSubmitBtn} from "./validate";
+import {closePopup, placePopup, profilePopup} from "./popups";
+import {config} from "./validate";
 
 /*Экспорты*/
-export {formExecution};
+export {handleProfileFormSubmit, handlePlaceFormSubmit};
 
-/*Функция работы с формой*/
-function formExecution(formName){
-    if (formName.id === 'form-two-inputs_place-add'){
-        addCard(createCard(document.getElementById('form-two-inputs__input-place-name').value,
-                           document.getElementById('form-two-inputs__input-place-link').value),
-                           cardsList, true);
-        formName.reset();
-        formName.querySelector(config.submitBtnSelector).setAttribute('disabled', 'disabled');
-        formName.querySelector(config.submitBtnSelector).classList.remove(config.submitBtnActiveSelector);
-        popupClose(formName.closest('.popup'));
-    }
-    if (formName.id === 'form-two-inputs_user-edit'){
-        document.querySelector('.profile__user-name').textContent = document.getElementById('form-two-inputs__input-user-name').value;
-        document.querySelector('.profile__user-status').textContent = document.getElementById('form-two-inputs__input-user-status').value;
-        popupClose(formName.closest('.popup'));
-    }
+/*Определеяем переменные поиска элементов*/
+const inputPlaceName = document.getElementById('form-two-inputs__input-place-name');
+const inputPlaceLink = document.getElementById('form-two-inputs__input-place-link');
+const inputUserName = document.getElementById('form-two-inputs__input-user-name');
+const inputUserStatus = document.getElementById('form-two-inputs__input-user-status');
+const profileUserName = document.querySelector('.profile__user-name');
+const profileUserStatus = document.querySelector('.profile__user-status');
+
+
+/*Функции работы с формой*/
+function handlePlaceFormSubmit(formsListItem){
+        addCard(createCard(inputPlaceName.value, inputPlaceLink.value), cardsList, true);
+        formsListItem.reset();
+        formsListItem.querySelector(config.submitBtnSelector).setAttribute('disabled', 'disabled');
+        formsListItem.querySelector(config.submitBtnSelector).classList.remove(config.submitBtnActiveSelector);
+        closePopup(placePopup);
+}
+
+function handleProfileFormSubmit(){
+        profileUserName.textContent = inputUserName.value;
+        profileUserStatus.textContent = inputUserStatus.value;
+        closePopup(profilePopup);
 }

@@ -3,9 +3,8 @@ import './cards'
 import './popups'
 import './validate'
 
-import {popupClose,
-        popupOpenBtnsSetEventListeners,
-        popupCloseBtnsSetEventListeners,
+import {setPopupCloseBtnsEventListeners,
+        setPopupOpenBtnsEventListeners,
         popupCloseBtnsList,
         popupOpenBtnsList} from "./popups"
 
@@ -14,8 +13,8 @@ import {enableValidation,
 import {addCard, createCard, cardsList, initialCards} from "./cards";
 
 /*Запускаем функции-------------------------------------------------------------------------------------------*/
-popupOpenBtnsSetEventListeners(popupOpenBtnsList);
-popupCloseBtnsSetEventListeners(popupCloseBtnsList)
+setPopupCloseBtnsEventListeners(popupCloseBtnsList);
+setPopupOpenBtnsEventListeners(popupOpenBtnsList);
 enableValidation(config);
 
 /*Добавляем карточки из массива*/

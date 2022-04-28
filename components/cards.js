@@ -2,7 +2,7 @@
 export {cardsList, initialCards, addCard, createCard}
 
 /*Импорты*/
-import {popupOpen} from "./popups.js";
+import {openPopup} from "./popups.js";
 
 /*Массив с карточками*/
 const initialCards = [
@@ -72,7 +72,7 @@ function createCard(cardName, cardLink){
         popupImage.setAttribute('alt', evt.target.alt);
         document.querySelector('.form-img-watch__img-title').textContent = evt.target.alt;
         /*Открываем popup с формой*/
-        popupOpen(popupImgWatch);
+        openPopup(popupImgWatch);
     });
     return newCard
 }
