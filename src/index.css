@@ -1,56 +1,56 @@
 /*Сбрасываем глобальные стили*/
-@import url(../vendor/normalize.css);
+@import url(vendor/normalize.css);
 /*Импортируем шрифты*/
-@import url(../vendor/fonts/fonts.css);
+@import url(vendor/fonts/fonts.css);
 /*Импортируем настройки переиспользуемых элементов и глобальных блоков*/
-@import url(../blocks/whole-page/whole-page.css);
-@import url(../blocks/page/page.css);
-@import url(../blocks/content/content.css);
+@import url(blocks/whole-page/whole-page.css);
+@import url(blocks/page/page.css);
+@import url(blocks/content/content.css);
 /*Импортируем настройки блоков и элементов*/
-@import url(../blocks/header/header.css);
-@import url(../blocks/header/__logo/header__logo.css);
+@import url(blocks/header/header.css);
+@import url(blocks/header/__logo/header__logo.css);
 /*Profile*/
-@import url(../blocks/profile/profile.css);
-@import url(../blocks/profile/__current-user/profile__current-user.css);
-@import url(../blocks/profile/__user-avatar/profile__user-avatar.css);
-@import url(../blocks/profile/__user-description/profile__user-description.css);
-@import url(../blocks/profile/__user-name-container/profile__user-name-container.css);
-@import url(../blocks/profile/__user-name/profile__user-name.css);
-@import url(../blocks/profile/__user-status/profile__user-status.css);
-@import url(../blocks/profile/__user-name-modify-button/profile__user-name-modify-button.css);
-@import url(../blocks/profile/__add-new-place-button/profile__add-new-place-button.css);
+@import url(blocks/profile/profile.css);
+@import url(blocks/profile/__current-user/profile__current-user.css);
+@import url(blocks/profile/__user-avatar/profile__user-avatar.css);
+@import url(blocks/profile/__user-description/profile__user-description.css);
+@import url(blocks/profile/__user-name-container/profile__user-name-container.css);
+@import url(blocks/profile/__user-name/profile__user-name.css);
+@import url(blocks/profile/__user-status/profile__user-status.css);
+@import url(blocks/profile/__user-name-modify-button/profile__user-name-modify-button.css);
+@import url(blocks/profile/__add-new-place-button/profile__add-new-place-button.css);
 /*Cards*/
-@import url(../blocks/cards/__cards-list/cards__cards-list.css);
-@import url(../blocks/cards/cards.css);
-@import url(../blocks/cards/__cards-list-item/cards__list-item.css);
-@import url(../blocks/cards/__card/cards__card.css);
-@import url(../blocks/cards/__card-image/cards__card-image.css);
-@import url(../blocks/cards/__card-description/cards__card-description.css);
-@import url(../blocks/cards/__card-name/cards__card-name.css);
-@import url(../blocks/cards/__card-like-button/cards__card-like-button.css);
-@import url(../blocks/cards/__card-like-button/_active/cards__card-like-button_active.css);
-@import url(../blocks/cards/__card-delete-button/cards__card-delete-button.css);
+@import url(blocks/cards/__cards-list/cards__cards-list.css);
+@import url(blocks/cards/cards.css);
+@import url(blocks/cards/__cards-list-item/cards__list-item.css);
+@import url(blocks/cards/__card/cards__card.css);
+@import url(blocks/cards/__card-image/cards__card-image.css);
+@import url(blocks/cards/__card-description/cards__card-description.css);
+@import url(blocks/cards/__card-name/cards__card-name.css);
+@import url(blocks/cards/__card-like-button/cards__card-like-button.css);
+@import url(blocks/cards/__card-like-button/_active/cards__card-like-button_active.css);
+@import url(blocks/cards/__card-delete-button/cards__card-delete-button.css);
 /*Footer*/
-@import url(../blocks/footer/footer.css);
-@import url(../blocks/footer/__copyright/footer__copyright.css);
-@import url(../blocks/popup/popup.css);
+@import url(blocks/footer/footer.css);
+@import url(blocks/footer/__copyright/footer__copyright.css);
+@import url(blocks/popup/popup.css);
 /*Popup на редактирование профиля и добавления новой карточки*/
-@import url(../blocks/popup/_opened/popup_opened.css);
-@import url(../blocks/popup/__container/popup__container.css);
-@import url(../blocks/popup/__close-button/popup__close-button.css);
-@import url(../blocks/form-two-inputs/form-two-inputs.css);
-@import url(../blocks/form-two-inputs/__header/form-two-inputs__header.css);
-@import url(../blocks/form-two-inputs/__inputs-area/form-two-inputs__inputs-area.css);
-@import url(../blocks/form-two-inputs/__input/form-two-inputs__input.css);
-@import url(../blocks/form-two-inputs/__input/_invalid/form-two-inputs__input_invalid.css);
-@import url(../blocks/form-two-inputs/__submit-button/form-two-inputs__submit-button.css);
-@import url(../blocks/form-two-inputs/__submit-button/_active/form-two-inputs__submit-button_active.css);
-@import url(../blocks/form-two-inputs/__error-massage/form-two-inputs__error-message.css);
+@import url(blocks/popup/_opened/popup_opened.css);
+@import url(blocks/popup/__container/popup__container.css);
+@import url(blocks/popup/__close-button/popup__close-button.css);
+@import url(blocks/form-two-inputs/form-two-inputs.css);
+@import url(blocks/form-two-inputs/__header/form-two-inputs__header.css);
+@import url(blocks/form-two-inputs/__inputs-area/form-two-inputs__inputs-area.css);
+@import url(blocks/form-two-inputs/__input/form-two-inputs__input.css);
+@import url(blocks/form-two-inputs/__input/_invalid/form-two-inputs__input_invalid.css);
+@import url(blocks/form-two-inputs/__submit-button/form-two-inputs__submit-button.css);
+@import url(blocks/form-two-inputs/__submit-button/_active/form-two-inputs__submit-button_active.css);
+@import url(blocks/form-two-inputs/__error-massage/form-two-inputs__error-message.css);
 /*Popup на просмотр картинки*/
 
-@import url(../blocks/form-img-watch/form-img-watch.css);
-@import url(../blocks/form-img-watch/__img/form-img-watch__img.css);
-@import url(../blocks/form-img-watch/__img-title/form-img-watch__img-title.css);
+@import url(blocks/form-img-watch/form-img-watch.css);
+@import url(blocks/form-img-watch/__img/form-img-watch__img.css);
+@import url(blocks/form-img-watch/__img-title/form-img-watch__img-title.css);
 
 /*Настройки для pixel-perfect
 @import url("../p-p.css");

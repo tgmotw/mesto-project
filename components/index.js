@@ -1,24 +1,23 @@
-import './index.css'
+import '../src/index.css'
 import './cards'
 import './popups'
 import './validate'
 
-import {popupClose,
-        popupOpenBtnsSetEventListeners,
-        popupCloseBtnsSetEventListeners,
+import {setPopupCloseBtnsEventListeners,
+        setPopupOpenBtnsEventListeners,
         popupCloseBtnsList,
         popupOpenBtnsList} from "./popups"
 
 import {enableValidation,
         config} from "./validate";
-import {cardAdd, cardCreate, cardsList, initialCards} from "./cards";
+import {addCard, createCard, cardsList, initialCards} from "./cards";
 
 /*Запускаем функции-------------------------------------------------------------------------------------------*/
-popupOpenBtnsSetEventListeners(popupOpenBtnsList);
-popupCloseBtnsSetEventListeners(popupCloseBtnsList)
+setPopupCloseBtnsEventListeners(popupCloseBtnsList);
+setPopupOpenBtnsEventListeners(popupOpenBtnsList);
 enableValidation(config);
 
 /*Добавляем карточки из массива*/
 initialCards.forEach(function (arrElement){
-        cardAdd(cardCreate(arrElement.name, arrElement.link), cardsList, false);
+        addCard(createCard(arrElement.name, arrElement.link), cardsList, false);
 });

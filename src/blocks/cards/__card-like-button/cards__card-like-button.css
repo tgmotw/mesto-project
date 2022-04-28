@@ -19,7 +19,7 @@
     border-image: unset;
     /*Кастомные настройки*/
     position: relative;
-    width:22px;
+    min-width:22px;
     height:19px;
     background-image: url("../../../vendor/images/cards__card-like-button.svg");
     background-size: contain;
