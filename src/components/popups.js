@@ -1,6 +1,5 @@
 export {closePopup,
         openPopup,
-        setPopupOpenBtnsEventListeners,
         setPopupCloseBtnsEventListeners,
         popupCloseBtnsList,
         popupOpenBtnsList,
@@ -16,7 +15,11 @@ const popupCloseBtnsList = Array.from(document.querySelectorAll('.popup__close-b
 const profilePopup = document.querySelector('.popup_user-edit');
 const placePopup = document.querySelector('.popup_place-add');
 const imagePopup = document.querySelector('.popup_img-watch');
-const popupsList = Array.from(document.querySelectorAll('.popup'))
+const popupsList = Array.from(document.querySelectorAll('.popup'));
+
+/*Определяем все кнопки открытия попапов*/
+const modifyUserNameBtn = document.querySelector('.profile__user-name-modify-button');
+const addNewPlaceBtn = document.querySelector('.profile__add-new-place-button');
 
 /*Декларируем функцию открытия окна*/
 function openPopup(popupObject){
@@ -37,9 +40,6 @@ function clickTarget(evt){
     if (Array.from(evt.target.classList).includes('popup')){
         closePopup(evt.target);
     }
-    if (Array.from(evt.target.classList).includes('popup__container')){
-        closePopup(evt.target.closest('.popup'))
-    }
 }
 /*Декларируем функцию определения клавиши esc*/
 function handleEscKey(evt){
@@ -52,15 +52,6 @@ function handleEscKey(evt){
     }
 }
 
-/*Декларируем функцию добавления лиссенеров на кнопки открытия окон*/
-function setPopupOpenBtnsEventListeners(popupOpenBtnsList){
-    popupOpenBtnsList.forEach((popupOpenBtn) => {
-        popupOpenBtn.addEventListener('click', (evt) => {
-            const popupObject = document.querySelector(`.popup_${popupOpenBtn.id}`);
-            openPopup(popupObject);
-        })
-    });
-}
 /*Декларируем функцию добавления лиссенеров на кнопки закрытия окон*/
 function setPopupCloseBtnsEventListeners(popupCloseBtnsList){
     popupCloseBtnsList.forEach((popupCloseBtn) => {
@@ -70,3 +61,13 @@ function setPopupCloseBtnsEventListeners(popupCloseBtnsList){
         });
     });
 }
+
+modifyUserNameBtn.addEventListener('click', (evt) =>{
+    console.log('1111111');
+    openPopup(profilePopup);
+});
+
+addNewPlaceBtn.addEventListener('click', (evt) =>{
+    console.log('2222222');
+    openPopup(placePopup);
+})

@@ -56,6 +56,7 @@ function createCard(cardName, cardLink){
     const newCard = cardTemplate.querySelector('.cards__list-item').cloneNode(true);
     const newCardImage = newCard.querySelector('.cards__card-image');
     const popupImage = document.querySelector('.form-img-watch__img');
+    const popupImageTitle = document.querySelector('.form-img-watch__img-title');
 
     newCardImage.setAttribute('src', `${cardLink}`);
     newCardImage.setAttribute('alt', `${cardName}`);
@@ -70,7 +71,7 @@ function createCard(cardName, cardLink){
         /*Синхронизируем данные карточки и открываемой формы*/
         popupImage.setAttribute('src', evt.target.src);
         popupImage.setAttribute('alt', evt.target.alt);
-        document.querySelector('.form-img-watch__img-title').textContent = evt.target.alt;
+        popupImageTitle.textContent = evt.target.alt;
         /*Открываем popup с формой*/
         openPopup(popupImgWatch);
     });
