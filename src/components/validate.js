@@ -3,7 +3,7 @@ export {config,
         enableValidation,
         toggleSubmitBtn}
 
-/*Экспорты*/
+/*Импорты*/
 import {handleProfileFormSubmit, handlePlaceFormSubmit} from "./forms";
 
 /*Конфигурация*/
@@ -19,21 +19,10 @@ const config = {
 function enableValidation(config){
     const formsList = Array.from(document.querySelectorAll(config.formsSelector));
     formsList.forEach((formsListItem) => {
-        if (formsListItem.id === 'form-two-inputs_place-add') {
-            formsListItem.addEventListener('submit', (evt) => {
-                evt.preventDefault();
-                handlePlaceFormSubmit(formsListItem);
-            });
-        }
-        if (formsListItem.id === 'form-two-inputs_user-edit'){
-            formsListItem.addEventListener('submit', (evt) => {
-                evt.preventDefault();
-                handleProfileFormSubmit();
-            });
-        }
         setInputsEventListeners(formsListItem);
     });
 }
+
 /*Функция навешивания лиссенеров на инпуты*/
 function setInputsEventListeners(formsListItem){
     const inputsList = Array.from(formsListItem.querySelectorAll(config.inputsSelector));
