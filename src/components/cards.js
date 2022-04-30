@@ -52,21 +52,31 @@ function deleteCard(deleteButton){
 }
 
 /*Декларируем функцию модификации клона карточки*/
-function createCard(cardName, cardLink){
+function createCard(card, user){
     const newCard = cardTemplate.querySelector('.cards__list-item').cloneNode(true);
     const newCardImage = newCard.querySelector('.cards__card-image');
     const popupImage = document.querySelector('.form-img-watch__img');
     const popupImageTitle = document.querySelector('.form-img-watch__img-title');
+    const cardDeleteBtn = newCard.querySelector('.cards__card-delete-button');
 
-    newCardImage.setAttribute('src', `${cardLink}`);
-    newCardImage.setAttribute('alt', `${cardName}`);
-    newCard.querySelector('.cards__card-name').textContent = cardName;
+    newCardImage.setAttribute('src', `${card.link}`);
+    newCardImage.setAttribute('alt', `${card.name}`);
+    newCard.querySelector('.cards__card-name').textContent = card.name;
+
     newCard.querySelector('.cards__card-like-button').addEventListener('click', (evt) => {
         likeCard(evt.target);
     });
-    newCard.querySelector('.cards__card-delete-button').addEventListener('click', (evt) => {
-        deleteCard(evt.target);
-    });
+
+    /*Проверяем совпадение пользователей и настраиваем кнорку "Удалить"*/
+    if (card.owner._id === user){
+        cardDeleteBtn.addEventListener('click', (evt) => {
+            deleteCard(evt.target);
+        });
+    }else{
+        cardDeleteBtn.classList.add('cards__card-delete-button_inactive')
+    }
+
+    /*Добавляем возможность открытия карточки по клику на картинку*/
     newCardImage.addEventListener('click', (evt) => {
         /*Синхронизируем данные карточки и открываемой формы*/
         popupImage.setAttribute('src', evt.target.src);

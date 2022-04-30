@@ -1,0 +1,4 @@
+.cards__card-delete-button_inactive{
+    display: none;
+    background-color: red;
+}
