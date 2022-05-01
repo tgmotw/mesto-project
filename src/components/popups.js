@@ -1,24 +1,33 @@
+/*Импорты*/
+
+import {profileUserName,
+        profileUserStatus,
+        inputUserName,
+        inputUserStatus} from "./forms";
+/*Экспорты*/
 export {closePopup,
         openPopup,
         setPopupCloseBtnsEventListeners,
         popupCloseBtnsList,
-        popupOpenBtnsList,
+        editUserAvatarBtn,
         profilePopup,
         placePopup,
-        imagePopup}
+        imagePopup,
+        avatarPopup}
 
 /*Определяем все кнопки открытия и закрытия попапов*/
-const popupOpenBtnsList = Array.from(document.querySelectorAll('.popup__open-button'));
 const popupCloseBtnsList = Array.from(document.querySelectorAll('.popup__close-button'));
 
 /*Определяем все попапы*/
 const profilePopup = document.querySelector('.popup_user-edit');
 const placePopup = document.querySelector('.popup_place-add');
 const imagePopup = document.querySelector('.popup_img-watch');
+const avatarPopup = document.querySelector('.popup_avatar-edit');
 const popupsList = Array.from(document.querySelectorAll('.popup'));
 
 /*Определяем все кнопки открытия попапов*/
 const modifyUserNameBtn = document.querySelector('.profile__user-name-modify-button');
+const editUserAvatarBtn = document.querySelector('.profile__user-edit-button');
 const addNewPlaceBtn = document.querySelector('.profile__add-new-place-button');
 
 /*Декларируем функцию открытия окна*/
@@ -62,12 +71,17 @@ function setPopupCloseBtnsEventListeners(popupCloseBtnsList){
     });
 }
 
-modifyUserNameBtn.addEventListener('click', (evt) =>{
-    console.log('1111111');
+/*Вешаем лиссенеры на кнопки открытия окон*/
+modifyUserNameBtn.addEventListener('click', (evt) => {
+    inputUserName.value = profileUserName.textContent;
+    inputUserStatus.value = profileUserStatus.textContent;
     openPopup(profilePopup);
-});
+})
+
+editUserAvatarBtn.addEventListener('click', (evt) => {
+    openPopup(avatarPopup);
+})
 
 addNewPlaceBtn.addEventListener('click', (evt) =>{
-    console.log('2222222');
     openPopup(placePopup);
 })

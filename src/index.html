@@ -15,9 +15,14 @@
   <main class="content">
     <section class="profile">
       <div class="profile__current-user">
-        <img src=""
-             alt="Портретное фото Жак-Ив Кусто"
-             class="profile__user-avatar">
+        <div class="profile__user-avatar-container">
+          <button class="profile__user-edit-button">
+            <span class="profile__user-edit-button-image"></span>
+          </button>
+          <img src=""
+              alt="Аватар пользователя"
+              class="profile__user-avatar">
+        </div>
         <div  class="profile__user-description">
           <div class="profile__user-name-container">
             <h1 class="profile__user-name"></h1>
@@ -45,10 +50,14 @@
                  class="cards__card-image">
             <div class="cards__card-description">
               <h2 class="cards__card-name"></h2>
-              <button class="cards__card-like-button"
-                      type="button"
-                      aria-label="Кнопка отмечает картинку как любимую">
-              </button>
+              <div class="cards__card-like-button-container">
+                <button class="cards__card-like-button"
+                        id ="cards__card-like-button"
+                        type="button"
+                        aria-label="Кнопка отмечает картинку как любимую">
+                </button>
+                <label class="cards__card-like-button-label" for= "cards__card-like-button"></label>
+              </div>
             </div>
             <button class="cards__card-delete-button"
                     type="button"
@@ -103,6 +112,7 @@
           <span class="form-two-inputs__error-message form-two-inputs__input-user-status-error-message"></span>
         </fieldset>
         <button class="form-two-inputs__submit-button"
+                id ="form-two-inputs_user-edit-btn"
                 type="submit"
                 disabled>
           Сохранить
@@ -142,6 +152,7 @@
           <span class="form-two-inputs__error-message form-two-inputs__input-place-link-error-message"></span>
         </fieldset>
         <button class="form-two-inputs__submit-button"
+                id ="form-two-inputs__place-add-btn"
                 type="submit"
                 disabled>
           Создать
@@ -150,26 +161,51 @@
     </div>
   </div>
 <!--Окно просмотра картинки-->
-<div class="popup popup_img-watch">
-  <div class="popup__container">
-    <button class="popup__close-button popup__close-button_img-watch"
-            type="button"
-            aria-label="Кнопка закрывает окно"></button>
-    <figure class="form-img-watch">
-      <img src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg"
-           alt=""
-           class="form-img-watch__img">
-      <figcaption class="form-img-watch__img-title">
-        Новое место
-      </figcaption>
-    </figure>
+  <div class="popup popup_img-watch">
+    <div class="popup__container">
+      <button class="popup__close-button popup__close-button_img-watch"
+              type="button"
+              aria-label="Кнопка закрывает окно"></button>
+      <figure class="form-img-watch">
+        <img src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg"
+             alt=""
+             class="form-img-watch__img">
+        <figcaption class="form-img-watch__img-title">
+          Новое место
+        </figcaption>
+      </figure>
+    </div>
   </div>
-</div>
-<!--Скрипты-----------------------------------------------------------------------------------
-  <script src="pages/index.js"></script>
-  <script type="module" src="../components/validate.js"></script>
-  <script type="module" src="../components/popups.js"></script>
-  <script type="module" src="../components/cards.js"></script>
-  --->
+  <!--Окно редактирования аватара-->
+  <div class="popup popup_avatar-edit">
+    <div class="popup__container">
+      <button class="popup__close-button popup__close-button_place-add"
+              type="button"
+              aria-label="Кнопка закрывает окно"></button>
+      <form class="form-two-inputs"
+            name="form-two-inputs_avatar-edit"
+            id="form-two-inputs_avatar-edit"
+            novalidate>
+        <h2 class="form-two-inputs__header">
+          Обновить аватар
+        </h2>
+        <fieldset class="form-two-inputs__inputs-area">
+          <input type="url"
+                 placeholder="Ссылка на аватар"
+                 class="form-two-inputs__input"
+                 name="form-two-inputs__input-avatar-link"
+                 id="form-two-inputs__input-avatar-link"
+                 required>
+          <span class="form-two-inputs__error-message form-two-inputs__input-avatar-link-error-message"></span>
+        </fieldset>
+        <button class="form-two-inputs__submit-button"
+                id ="form-two-inputs__avatar-edit-btn"
+                type="submit"
+                disabled>
+          Сохранить
+        </button>
+      </form>
+    </div>
+  </div>
 </body>
 </html>

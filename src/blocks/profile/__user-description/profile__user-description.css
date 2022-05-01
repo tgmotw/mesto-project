@@ -3,6 +3,13 @@
     flex-direction: column;
     justify-content: flex-start;
     width: 100%;
+    margin-left: 30px;
+}
+
+@media screen and (max-width: 430px){
+    .profile__user-description{
+        margin-left: 0;
+    }
 }
 
 @media screen and (max-width: 650px){
