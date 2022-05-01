@@ -1,0 +1,9 @@
+.profile__user-edit-button-image{
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    display: block;
+    background-image: url("../../../vendor/images/profile__user-avatar-edit.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+}
