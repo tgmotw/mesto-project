@@ -3,9 +3,6 @@ export {config,
         enableValidation,
         toggleSubmitBtn}
 
-/*Импорты*/
-import {handleProfileFormSubmit, handlePlaceFormSubmit} from "./forms";
-
 /*Конфигурация*/
 const config = {
     formsSelector: '.form-two-inputs',

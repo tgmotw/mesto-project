@@ -18,16 +18,18 @@ import {handlePlaceFormSubmit,
         handleProfileFormSubmit,
         handleAvatarEditFormSubmit} from "./forms";
 
-import {getCardsListApi, getUserProfileApi} from "./api";
+import {getCardsListApi,
+        getUserProfileApi,
+        errCatch} from "./api";
 
 /*Запускаем функции-------------------------------------------------------------------------------------------*/
 setPopupCloseBtnsEventListeners(popupCloseBtnsList);
 enableValidation(config);
 
 /*Добавляем лиссенеры к формам*/
-const formTwoInputsPlaceAdd = document.getElementById('form-two-inputs_place-add');
-const formTwoInputsUserEdit = document.getElementById('form-two-inputs_user-edit');
-const formTwoInputsAvatarEdit = document.getElementById('form-two-inputs_avatar-edit');
+const formTwoInputsPlaceAdd = document.querySelector('#form-two-inputs_place-add');
+const formTwoInputsUserEdit = document.querySelector('#form-two-inputs_user-edit');
+const formTwoInputsAvatarEdit = document.querySelector('#form-two-inputs_avatar-edit');
 
 formTwoInputsPlaceAdd.addEventListener('submit', (evt) =>{
         evt.preventDefault();
@@ -58,7 +60,9 @@ Promise.all([getCardsListApi(), getUserProfileApi()])
         userStatus.textContent = res[1].about;
         }
     )
+    .catch(err => errCatch(err))
 
+/*Настраиваем попап на аватаре*/
 userAvatar.addEventListener('mouseenter',evt => {
         editUserAvatarBtn.classList.add('profile__user-edit-button_active');
 })

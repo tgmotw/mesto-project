@@ -1,39 +1,12 @@
 /*Экспорты*/
-export {cardsList, initialCards, addCard, createCard}
+export {cardsList, addCard, createCard}
 
 /*Импорты*/
 import {openPopup} from "./popups.js";
 import {deletePlaceCardApi,
         likePlaceCardApi,
-        dislikePlaceCardApi} from "./api";
-
-/*Массив с карточками*/
-const initialCards = [
-    {
-        name: 'Архыз',
-        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-    },
-    {
-        name: 'Челябинская область',
-        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-    },
-    {
-        name: 'Иваново',
-        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-    },
-    {
-        name: 'Камчатка',
-        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-    },
-    {
-        name: 'Холмогорский район',
-        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-    },
-    {
-        name: 'Байкал',
-        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-    }
-];
+        dislikePlaceCardApi,
+        errCatch} from "./api";
 
 /*Определяем контейнер для карточек*/
 const cardsList = document.querySelector('.cards__list');
@@ -43,6 +16,8 @@ const cardTemplate = document.querySelector('.template').content;
 
 /*Определяем попап*/
 const popupImgWatch = document.querySelector('.popup_img-watch');
+const popupImage = document.querySelector('.form-img-watch__img');
+const popupImageTitle = document.querySelector('.form-img-watch__img-title');
 
 /*Декларируем функцию работы с лайком*/
 function likeCard(likeButton, card, cardLikeBtnLabel){
@@ -51,13 +26,15 @@ function likeCard(likeButton, card, cardLikeBtnLabel){
             .then(res => {
                 likeButton.classList.remove('cards__card-like-button_active');
                 cardLikeBtnLabel.textContent = res.likes.length;
-            });
+            })
+            .catch(err => errCatch(err));
     }else{
         likePlaceCardApi(card._id)
             .then(res => {
                 likeButton.classList.add('cards__card-like-button_active')
                 cardLikeBtnLabel.textContent = res.likes.length;
-            });
+            })
+            .catch(err => errCatch(err));
     }
 }
 
@@ -70,8 +47,6 @@ function deleteCard(deleteButton){
 function createCard(card, user){
     const newCard = cardTemplate.querySelector('.cards__list-item').cloneNode(true);
     const newCardImage = newCard.querySelector('.cards__card-image');
-    const popupImage = document.querySelector('.form-img-watch__img');
-    const popupImageTitle = document.querySelector('.form-img-watch__img-title');
     const cardDeleteBtn = newCard.querySelector('.cards__card-delete-button');
     const cardLikeBtn = newCard.querySelector('.cards__card-like-button');
     const cardLikeBtnLabel = newCard.querySelector('.cards__card-like-button-label');
@@ -102,7 +77,8 @@ function createCard(card, user){
             deletePlaceCardApi(card._id)
                 .then(() =>{
                     deleteCard(evt.target)
-                });
+                })
+                .catch(err => errCatch(err));
         });
     }else{
         cardDeleteBtn.classList.add('cards__card-delete-button_inactive')

@@ -6,137 +6,118 @@ export {getCardsListApi,
         deletePlaceCardApi,
         likePlaceCardApi,
         dislikePlaceCardApi,
-        editUserAvatarApi}
+        editUserAvatarApi,
+        errCatch}
+
+/*Конфигурация*/
+const settings = {
+    url: 'https://nomoreparties.co/v1',
+    sert: '2d811eb1-796d-4958-aa5d-5168e41bfb22',
+    cohort: '/plus-cohort-9'
+}
+
+/*Функция ответа проверки сервера*/
+function checkResponse(res){
+    if (res.ok) {
+        return res.json();
+    }
+    return Promise.reject(`Ошибка: ${res.status}`);
+}
+
+/*Обработчик ошибок*/
+function errCatch(err){
+    console.log(`Произошла ошибка! Код ошибки: ${err.status}, статус: ${err.statusText}`)
+}
 
 /*Метод получения карточки с сервера*/
 function getCardsListApi() {
-    return fetch('https://nomoreparties.co/v1/plus-cohort-9/cards', {
+    return fetch(`${settings.url}${settings.cohort}/cards`, {
         headers: {
-            authorization: '2d811eb1-796d-4958-aa5d-5168e41bfb22'
+            authorization: settings.sert
         }
     })
-        .then(res => {
-            if (res.ok) {
-                return res.json();
-            }
-            return Promise.reject(`Ошибка: ${res.status}`);
-        });
+        .then(res => checkResponse(res))
 }
 
 /*Метод получения данных пользователя*/
 function getUserProfileApi() {
-    return fetch('https://nomoreparties.co/v1/plus-cohort-9/users/me', {
+    return fetch(`${settings.url}${settings.cohort}/users/me`, {
         headers: {
-            authorization: '2d811eb1-796d-4958-aa5d-5168e41bfb22'
+            authorization: settings.sert
         }
     })
-        .then(res => {
-            if (res.ok) {
-                return res.json();
-            }
-            return Promise.reject(`Ошибка: ${res.status}`);
-        });
+        .then(res => checkResponse(res))
 }
 
 /*Метод редактирования данных пользователя*/
 function editUserProfileApi(userProfile){
-    return fetch('https://nomoreparties.co/v1/plus-cohort-9/users/me', {
+    return fetch(`${settings.url}${settings.cohort}/users/me`, {
         method: 'PATCH',
         headers: {
-            authorization: '2d811eb1-796d-4958-aa5d-5168e41bfb22',
+            authorization: settings.sert,
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(userProfile),
 
     })
-        .then(res => {
-            if (res.ok) {
-                return res.json();
-            }
-            return Promise.reject(`Ошибка: ${res.status}`);
-        });
+        .then(res => checkResponse(res))
 }
 /*Метод добавления карточки*/
 function addPlaceCardApi(cardParam){
-    return fetch('https://nomoreparties.co/v1/plus-cohort-9/cards', {
+    return fetch(`${settings.url}${settings.cohort}/cards`, {
         method: 'POST',
         headers: {
-            authorization: '2d811eb1-796d-4958-aa5d-5168e41bfb22',
+            authorization: settings.sert,
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(cardParam),
 
     })
-        .then(res => {
-            if (res.ok) {
-                return res.json();
-            }
-            return Promise.reject(`Ошибка: ${res.status}`);
-        });
+        .then(res => checkResponse(res))
 }
 
 /*Метод удаления карточки*/
 function deletePlaceCardApi(cardId){
-    return fetch(`https://nomoreparties.co/v1/plus-cohort-9/cards/${cardId}`, {
+    return fetch(`${settings.url}${settings.cohort}/cards/${cardId}`, {
         method: 'DELETE',
         headers: {
-            authorization: '2d811eb1-796d-4958-aa5d-5168e41bfb22',
+            authorization: settings.sert,
         },
     })
-        .then(res => {
-            if (res.ok) {
-                return res.json();
-            }
-            return Promise.reject(`Ошибка: ${res.status}`);
-        });
+        .then(res => checkResponse(res))
 }
 
 /*Метод добавления лайка карточки*/
 function likePlaceCardApi(cardId){
-    return fetch(`https://nomoreparties.co/v1/plus-cohort-9/cards/likes/${cardId}`, {
+    return fetch(`${settings.url}${settings.cohort}/cards/likes/${cardId}`, {
         method: 'PUT',
         headers: {
-            authorization: '2d811eb1-796d-4958-aa5d-5168e41bfb22',
+            authorization: settings.sert,
         },
     })
-        .then(res => {
-            if (res.ok) {
-                return res.json();
-            }
-            return Promise.reject(`Ошибка: ${res.status}`);
-        });
+        .then(res => checkResponse(res))
 }
 
 /*Метод снятия лайка с карточки*/
 function dislikePlaceCardApi(cardId){
-    return fetch(`https://nomoreparties.co/v1/plus-cohort-9/cards/likes/${cardId}`, {
+    return fetch(`${settings.url}${settings.cohort}/cards/likes/${cardId}`, {
         method: 'DELETE',
         headers: {
-            authorization: '2d811eb1-796d-4958-aa5d-5168e41bfb22',
+            authorization: settings.sert,
         },
     })
-        .then(res => {
-            if (res.ok) {
-                return res.json();
-            }
-            return Promise.reject(`Ошибка: ${res.status}`);
-        });
+        .then(res => checkResponse(res))
 }
 
 /*Метод снятия лайка с карточки*/
 function editUserAvatarApi(avatarLink){
-    return fetch(`https://nomoreparties.co/v1/plus-cohort-9/users/me/avatar`, {
+    return fetch(`${settings.url}${settings.cohort}/users/me/avatar`, {
         method: 'PATCH',
         headers: {
-            authorization: '2d811eb1-796d-4958-aa5d-5168e41bfb22',
+            authorization: settings.sert,
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(avatarLink),
     })
-        .then(res => {
-            if (res.ok) {
-                return res.json();
-            }
-            return Promise.reject(`Ошибка: ${res.status}`);
-        });
+        .then(res => checkResponse(res))
 }
