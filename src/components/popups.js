@@ -55,6 +55,7 @@ function handleEscKey(evt){
     if (evt.key === "Escape"){
         popupsList.forEach((popupsListItem) => {
           if (Array.from(popupsListItem.classList).includes('popup_opened')){;
+              popupsListItem.querySelector('.form').reset();
               closePopup(popupsListItem);
           }
         });

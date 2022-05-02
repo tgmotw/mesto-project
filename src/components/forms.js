@@ -9,7 +9,8 @@ import {
         editUserProfileApi,
         addPlaceCardApi,
         getUserProfileApi,
-        editUserAvatarApi} from "./api";
+        editUserAvatarApi,
+        errCatch} from "./api";
 
 /*Экспорты*/
 export {handleProfileFormSubmit,
@@ -22,17 +23,17 @@ export {handleProfileFormSubmit,
         profileUserStatus};
 
 /*Определеяем переменные поиска элементов*/
-const inputPlaceName = document.getElementById('form-two-inputs__input-place-name');
-const inputPlaceLink = document.getElementById('form-two-inputs__input-place-link');
-const inputUserName = document.getElementById('form-two-inputs__input-user-name');
-const inputUserStatus = document.getElementById('form-two-inputs__input-user-status');
-const inputAvatarLink = document.getElementById('form-two-inputs__input-avatar-link');
+const inputPlaceName = document.querySelector('#form-two-inputs__input-place-name');
+const inputPlaceLink = document.querySelector('#form-two-inputs__input-place-link');
+const inputUserName = document.querySelector('#form-two-inputs__input-user-name');
+const inputUserStatus = document.querySelector('#form-two-inputs__input-user-status');
+const inputAvatarLink = document.querySelector('#form-two-inputs__input-avatar-link');
 const profileUserName = document.querySelector('.profile__user-name');
 const profileUserStatus = document.querySelector('.profile__user-status');
 const profileUserAvatar = document.querySelector('.profile__user-avatar');
-const formTwoInputsUserEditSubBtn = document.getElementById('form-two-inputs_user-edit-btn');
-const formTwoInputsPlaceAddSubBtn = document.getElementById('form-two-inputs__place-add-btn');
-const formTwoInputsAvatarEditSubBtn = document.getElementById('form-two-inputs__avatar-edit-btn')
+const formTwoInputsUserEditSubBtn = document.querySelector('#form-two-inputs__avatar-edit-btn');
+const formTwoInputsPlaceAddSubBtn = document.querySelector('#form-two-inputs__place-add-btn');
+const formTwoInputsAvatarEditSubBtn = document.querySelector('#form-two-inputs__avatar-edit-btn')
 
 
 /*Функции работы с формой*/
@@ -44,10 +45,10 @@ function handlePlaceFormSubmit(formsListItem){
                    formsListItem.reset();
                    formsListItem.querySelector(config.submitBtnSelector).setAttribute('disabled', 'disabled');
                    formsListItem.querySelector(config.submitBtnSelector).classList.remove(config.submitBtnActiveSelector);
-                   formTwoInputsPlaceAddSubBtn.textContent = 'Добавить'
                    closePopup(placePopup)
            })
-           .catch(() => formTwoInputsPlaceAddSubBtn.textContent = 'Сохранить')
+           .catch(err => errCatch(err))
+           .finally(() => formTwoInputsPlaceAddSubBtn.textContent = 'Добавить');
 }
 
 function handleProfileFormSubmit(){
@@ -56,10 +57,10 @@ function handleProfileFormSubmit(){
             .then(res => {
                     profileUserName.textContent = res.name;
                     profileUserStatus.textContent = res.about;
-                    formTwoInputsUserEditSubBtn.textContent = 'Сохранить'
                     closePopup(profilePopup);
             })
-            .catch(() => formTwoInputsUserEditSubBtn.textContent = 'Сохранить')
+            .catch(err => errCatch(err))
+            .finally(() => formTwoInputsUserEditSubBtn.textContent = 'Сохранить');
 }
 
 function handleAvatarEditFormSubmit(formsListItem){
@@ -70,8 +71,8 @@ function handleAvatarEditFormSubmit(formsListItem){
                 formsListItem.reset();
                 formsListItem.querySelector(config.submitBtnSelector).setAttribute('disabled', 'disabled');
                 formsListItem.querySelector(config.submitBtnSelector).classList.remove(config.submitBtnActiveSelector);
-                formTwoInputsAvatarEditSubBtn.textContent = 'Сохранить'
                 closePopup(avatarPopup)
             })
-            .catch(() => formTwoInputsAvatarEditSubBtn.textContent = 'Сохранить')
+            .catch(err => errCatch(err))
+            .finally(() => formTwoInputsAvatarEditSubBtn.textContent = 'Сохранить');
 }
